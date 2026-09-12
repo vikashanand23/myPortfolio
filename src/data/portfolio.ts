@@ -10,7 +10,6 @@ export const PLACEHOLDER = "[PLACEHOLDER — ADD INFORMATION]";
 export type SocialLink = {
   id: string;
   label: string;
-  /** Set to a real URL (or mailto:) when available. */
   url: string;
   handle: string;
 };
@@ -64,9 +63,7 @@ export type SkillCategory = {
 
 export type Skill = {
   name: string;
-  /** ids of experience entries where this was used */
   experienceIds?: string[];
-  /** ids of projects where this was used */
   projectIds?: string[];
   note?: string;
 };
@@ -109,7 +106,13 @@ export type TimelineEntry = {
   date: string;
   sortKey: string;
   title: string;
-  category: "Career" | "Education" | "Project" | "Technical" | "Personal" | "Achievement";
+  category:
+    | "Career"
+    | "Education"
+    | "Project"
+    | "Technical"
+    | "Personal"
+    | "Achievement";
   description: string;
   route?: string;
 };
@@ -122,34 +125,67 @@ export type NowSection = {
 
 export const personal = {
   name: "Vikash Anand",
-  title: "Cloud / DevOps Engineer",
-  role: "Cloud-COE Engineer",
-  company: "Avis Budget Group",
+  title: "Cloud DevOps Engineer",
+  role: "Cloud DevOps Engineer",
+  company: "ThinkAnalytics",
+
   shortIntro:
-    "Cloud and DevOps Engineer passionate about AWS, Kubernetes, Terraform, automation and building reliable infrastructure.",
+    "I explore problems that catch my eye, break them down, automate what I can, and build reliable solutions across cloud and infrastructure.",
+
   about:
-    "I build and operate cloud infrastructure — designing AWS environments, running containerised workloads on Kubernetes, and codifying everything with Terraform so it can be rebuilt, reviewed and trusted. I care about systems that are boring in production and pleasant to operate.",
+    "I work on cloud infrastructure and the problems that come with running applications reliably at scale. My work revolves around AWS, Kubernetes, Terraform and CI/CD, with a focus on making deployments more automated, infrastructure more consistent, and systems easier to operate. I enjoy taking a problem that involves too much manual work or too many moving parts, breaking it down, and turning it into a reliable, repeatable solution.",
+
   professionalSummary:
-    "Cloud and DevOps engineer with 4+ years of experience across AWS infrastructure, container platforms and CI/CD automation. Day to day I work with ECS and EKS workloads, Terraform-managed infrastructure, Jenkins and GitHub-based delivery pipelines, and observability stacks built on Prometheus, Grafana and Zabbix. My focus is reliability: reproducible environments, sane networking, least-privilege access and deployments that are routine rather than eventful.",
+    "Cloud DevOps Engineer with 4+ years of experience designing, deploying and supporting scalable cloud infrastructure on AWS. Experienced in Kubernetes container orchestration, CI/CD automation using Jenkins, Infrastructure as Code with Terraform, and service mesh technologies such as Istio and Gloo Mesh. Strong background in Linux-based environments, multi-region deployments, cloud monitoring, production support and operational automation.",
+
   location: "Pune, Maharashtra, India",
-  hometown: PLACEHOLDER,
+
+  hometown: "Patna, Bihar, India",
+
   yearsOfExperience: "4+ Years",
+
   focus: "AWS • Kubernetes • Terraform • DevOps",
+
   availability: "Open to conversations",
+
   /** Replace with your real photograph at this path. */
   profileImage: "/images/profile.jpg",
+
   /** Drop your resume PDF in /public and point this at it. */
-  resumePath: PLACEHOLDER,
+  resumePath: "/vikash-anand-resume.pdf",
+
   resumeFileName: "vikash-anand-resume.pdf",
+
   terminalUser: "vikash",
+
   terminalHost: "portfolio",
 };
 
 export const socials: SocialLink[] = [
-  { id: "email", label: "Email", url: PLACEHOLDER, handle: PLACEHOLDER },
-  { id: "github", label: "GitHub", url: PLACEHOLDER, handle: PLACEHOLDER },
-  { id: "linkedin", label: "LinkedIn", url: PLACEHOLDER, handle: PLACEHOLDER },
-  { id: "x", label: "X / Twitter", url: PLACEHOLDER, handle: PLACEHOLDER },
+  {
+    id: "email",
+    label: "Email",
+    url: "https://mail.google.com/mail/?view=cm&fs=1&to=vikashanand04@gmail.com",
+    handle: "vikashanand04@gmail.com",
+  },
+  {
+    id: "github",
+    label: "GitHub",
+    url: "https://github.com/vikashanand23",
+    handle: "vikashanand",
+  },
+  {
+    id: "linkedin",
+    label: "LinkedIn",
+    url: "https://www.linkedin.com/in/vikash-a-040760107/",
+    handle: "Linkedin",
+  },
+  {
+    id: "x",
+    label: "X / Twitter",
+    url: PLACEHOLDER,
+    handle: PLACEHOLDER,
+  },
 ];
 
 export const quickFacts = [
@@ -162,64 +198,171 @@ export const quickFacts = [
 
 export const experience: Experience[] = [
   {
-    id: "avis-cloud-coe",
-    company: "Avis Budget Group",
-    role: "Cloud-COE Engineer",
+    id: "thinkanalytics-cloud-devops",
+    company: "ThinkAnalytics",
+    role: "Cloud DevOps Engineer",
     type: "Full-time",
-    location: PLACEHOLDER,
-    start: "Nov 2024",
+    location: "Pune, Maharashtra, India",
+    start: "Mar 2025",
     end: "Present",
     current: true,
+
     summary:
-      "Part of the Cloud Center of Excellence, working on AWS platform engineering, container platforms and infrastructure automation.",
-    responsibilities: [
-      "Design and maintain AWS infrastructure using Terraform.",
-      "Operate containerised workloads on ECS and EKS.",
-      "Support CI/CD delivery pipelines and release automation.",
-      "Maintain monitoring and alerting across platform services.",
-      PLACEHOLDER,
+      "Cloud DevOps Engineer focused on designing, automating and operating AWS cloud infrastructure, with hands-on experience in Kubernetes, Terraform, CI/CD, monitoring and application reliability. Builds scalable infrastructure and automation solutions that improve deployment efficiency, system resilience and operational performance.",
+
+    responsibilities: [ 
+      "Delivered cloud-native deployment solutions for 20+ enterprise customers, developing and deploying applications across AWS environments while collaborating with cross-functional teams to ensure reliable and scalable releases.",
+      "Migrated traditionally deployed services to containerized Kubernetes workloads, implementing automated deployment, failover, scaling and multi-layer security across staging and production environments.",
+      "Transformed 100+ static CloudFormation scripts into modular Terraform code, reducing infrastructure provisioning time by 60% and improving deployment consistency.", 
+      "Designed an AI-based predictive scaling architecture to dynamically optimize infrastructure capacity based on application usage patterns, with a projected ~15% reduction in infrastructure costs during peak workloads.", 
+      "Developed and deployed feature enhancements for multiple customers in production environments, coordinating application changes, configuration updates, testing and release activities to improve deployment efficiency.", 
+      "Automated and optimized system health monitoring and AWS CloudWatch configurations, implementing proactive alerting and infrastructure capacity improvements across compute, disk and memory resources.", 
+      "Streamlined Terraform-based infrastructure deployments, reducing manual provisioning and configuration activities by 40% and improving consistency across environments.", 
+      "Worked extensively with AWS, Kubernetes, Terraform, CloudWatch and containerized application environments to build, deploy, monitor and maintain scalable cloud infrastructure.", 
     ],
-    achievements: [PLACEHOLDER],
+
+    achievements: [
+      "Deployed and maintained 20+ enterprise customers in production environments.",
+      "Reduced downtime incidents by approximately 25% through proactive alert handling.",
+      "Reduced manual intervention in Terraform deployments by approximately 40%.",
+      "Designed predictive scaling architecture projected to reduce peak infrastructure costs by approximately 15%.",
+      "Migrated services toward Kubernetes-based deployments for automated failure management and improved security.",
+    ],
+
     technologies: [
       "AWS",
-      "Terraform",
       "Kubernetes",
-      "EKS",
-      "ECS",
+      "Terraform",
       "Docker",
+      "CloudWatch",
       "Jenkins",
-      "Prometheus",
-      "Grafana",
       "Linux",
+      "Python",
+      "Shell",
     ],
   },
+
+  { 
+    id: "avis-cloud-coe", 
+    company: "Avis Budget Group", 
+    role: "Cloud COE Engineer / DevOps Engineer", 
+    type: "Full-time", 
+    location: "Bengaluru, Karnataka, India", 
+    start: "Oct 2023", 
+    end: "Feb 2025", 
+    
+    summary: "Cloud DevOps engineering role focused on AWS infrastructure automation, Kubernetes, multi-region deployments, Infrastructure as Code, CI/CD and service mesh technologies across Fleet Data Platform and Customer Data Platform environments.", 
+    
+    responsibilities: [ 
+      "Engineered and automated AWS infrastructure workflows for Fleet Data Platform and Customer Data Platform environments.", 
+      "Automated service lifecycle management through JumpBox-based workflows and implemented automatic secret key rotation for cloud services.", 
+      "Transformed 100+ static CloudFormation scripts into modular Terraform infrastructure, improving scalability, maintainability and deployment consistency.", 
+      "Designed and maintained Jenkins pipelines integrating Terraform and CloudFormation to automate AWS infrastructure operations and deployments.", 
+      "Created automated deployment scripts for multi-region application environments, significantly reducing environment setup time.", 
+      "Deployed and maintained Kubernetes clusters across two AWS regions to provide service redundancy and improve application resilience.", 
+      "Implemented service mesh access-control, failover and outlier-detection policies to improve reliability across distributed environments.", 
+      "Managed cross-region service mesh traffic and migrated ingress routing from Istio to Gloo Mesh Route Tables to optimize traffic flow.", 
+    ], 
+    
+    achievements: [ 
+      "Eliminated approximately 15 hours per week of manual coordination through service lifecycle and secret rotation automation.", 
+      "Transformed 100+ static CloudFormation scripts into modular Terraform code, reducing infrastructure provisioning time by approximately 60%.", 
+      "Automated AWS infrastructure operations through Jenkins pipelines, reducing execution time by approximately 70%.", 
+      "Achieved approximately 90% reduction in multi-region environment setup time through automated deployment scripts.", 
+      "Improved service redundancy by deploying Kubernetes clusters across two AWS regions and reduced downtime risk by approximately 40%.", 
+      "Improved system reliability by approximately 35% through service mesh access control, failover and outlier-detection policies.", 
+      "Optimized cross-region traffic management by migrating ingress routing from Istio to Gloo Mesh Route Tables.", 
+    ], 
+    
+    technologies: [ 
+      "AWS", 
+      "Kubernetes", 
+      "EKS", 
+      "Docker", 
+      "Terraform", 
+      "CloudFormation", 
+      "Jenkins", 
+      "Istio", 
+      "Gloo Mesh", 
+      "Helm", 
+      "Python", 
+      "Shell", 
+      "Linux", 
+      "S3", 
+      "IAM", 
+      "Secrets Manager", 
+    ], 
+  },
+
   {
-    id: "avis-devops-contract",
-    company: "Avis Budget Group",
-    role: "DevOps Engineer — Contract / Multi-Region Deployment",
-    type: "Contract",
-    location: PLACEHOLDER,
-    start: "Oct 2023",
-    end: "Oct 2024",
+    id: "cognizant-programmer-analyst",
+    company: "Cognizant",
+    role: "Programmer Analyst Trainee",
+    type: "Full-time",
+    location: "India",
+    start: "Mar 2023",
+    end: "Oct 2023",
+
     summary:
-      "Worked on multi-region deployment of platform workloads, with a focus on Kubernetes environments and infrastructure as code.",
+      "Worked on Digital Dashboard Transformation for Otsuka Pharmaceuticals, focusing on data migration, SQL optimization and Tableau dashboard validation.",
+
     responsibilities: [
-      "Support multi-region deployment of application workloads.",
-      "Build and maintain Terraform modules for repeatable environments.",
-      "Work with Kubernetes/EKS clusters, Helm releases and service mesh routing.",
-      PLACEHOLDER,
+      "Migrated large datasets into Tableau using optimized SQL queries.",
+      "Validated and enhanced Tableau dashboards for reporting accuracy.",
+      "Analyzed data quality and resolved migration and visualization issues.",
+      "Worked with SQL-based data extraction and transformation workflows.",
     ],
-    achievements: [PLACEHOLDER],
+
+    achievements: [
+      "Improved data integrity and reduced migration errors by approximately 20%.",
+      "Achieved 100% visualization accuracy across validated dashboards.",
+      "Reduced reporting errors by approximately 30%.",
+    ],
+
     technologies: [
-      "AWS",
-      "Kubernetes",
-      "EKS",
-      "Helm",
-      "Istio",
-      "Gloo Mesh",
-      "Terraform",
-      "Docker",
-      "Shell scripting",
+      "SQL",
+      "Tableau",
+      "Data Analysis",
+    ],
+  },
+
+  {
+    id: "cognizant-data-warehousing",
+    company: "Cognizant",
+    role: "Data Warehousing Intern",
+    type: "Internship",
+    location: "India",
+    start: "Mar 2022",
+    end: "Jun 2022",
+
+    summary:
+      "Worked on data processing and ETL workflows using PySpark, Hive, Hadoop and Informatica, along with Python, SQL and shell scripting.",
+
+    responsibilities: [
+      "Built PySpark, Hive and Hadoop workflows for data processing.",
+      "Developed ETL pipelines using Informatica PowerCenter.",
+      "Authored shell scripts for automation and data-processing workflows.",
+      "Developed SQL, Python, NumPy and Pandas solutions for data analysis.",
+    ],
+
+    achievements: [
+      "Improved data processing efficiency by approximately 25%.",
+      "Reduced ETL load time by approximately 30%.",
+      "Authored 50+ shell scripts.",
+      "Completed 150+ SQL, Python, NumPy and Pandas solutions.",
+      "Improved data analysis throughput by approximately 40%.",
+    ],
+
+    technologies: [
+      "PySpark",
+      "Hive",
+      "Hadoop",
+      "Informatica PowerCenter",
+      "Python",
+      "SQL",
+      "Shell",
+      "NumPy",
+      "Pandas",
     ],
   },
 ];
@@ -227,30 +370,52 @@ export const experience: Experience[] = [
 export const education: Education[] = [
   {
     id: "education-1",
-    institution: PLACEHOLDER,
-    qualification: PLACEHOLDER,
-    field: PLACEHOLDER,
-    start: PLACEHOLDER,
-    end: PLACEHOLDER,
-    details: PLACEHOLDER,
+    institution: "Heritage Institute of Technology, Kolkata",
+    qualification: "Bachelor of Technology",
+    field: "Technology",
+    start: "Jul 2018",
+    end: "Jul 2022",
+    details: "CGPA: 8.0",
   },
 ];
 
 export const certifications: Certification[] = [
   {
     id: "certification-1",
-    name: PLACEHOLDER,
-    issuer: PLACEHOLDER,
-    issued: PLACEHOLDER,
+    name: "AWS Cloud Practitioner",
+    issuer: "Amazon Web Services",
+    issued: "Certified",
   },
 ];
 
 export const achievements: Achievement[] = [
   {
-    id: "achievement-1",
-    title: PLACEHOLDER,
-    description: PLACEHOLDER,
-    date: PLACEHOLDER,
+    id: "achievement-python-sql",
+    title: "HackerRank Gold Badges",
+    description:
+      "Earned Gold Badges in Python and SQL on HackerRank.",
+    date: "Professional Achievement",
+  },
+  {
+    id: "achievement-multi-region",
+    title: "Multi-Region Kubernetes Deployment",
+    description:
+      "Rolled out and maintained Kubernetes clusters across two AWS regions with service mesh traffic management, failover and outlier detection.",
+    date: "2023–2025",
+  },
+  {
+    id: "achievement-terraform",
+    title: "Infrastructure Automation",
+    description:
+      "Transformed 100+ static CloudFormation scripts into modular Terraform code and automated infrastructure workflows through Jenkins.",
+    date: "2023–2025",
+  },
+  {
+    id: "achievement-production-support",
+    title: "Enterprise Cloud Production Support",
+    description:
+      "Provided production cloud deployment and maintenance for 20+ enterprise customers while managing AWS services, CloudWatch alerts and infrastructure reliability.",
+    date: "2025–Present",
   },
 ];
 
@@ -258,134 +423,521 @@ export const skillCategories: SkillCategory[] = [
   {
     id: "cloud",
     name: "Cloud",
-    description: "Cloud platforms and managed services.",
+    description: "AWS cloud infrastructure and managed services.",
     skills: [
-      { name: "AWS", experienceIds: ["avis-cloud-coe", "avis-devops-contract"] },
-      { name: "S3", experienceIds: ["avis-cloud-coe"] },
-      { name: "CloudFront", experienceIds: ["avis-cloud-coe"] },
-      { name: "Route53", experienceIds: ["avis-cloud-coe"] },
-      { name: "IAM", experienceIds: ["avis-cloud-coe"] },
-      { name: "Secrets Manager", experienceIds: ["avis-cloud-coe"] },
+      {
+        name: "AWS",
+        experienceIds: [
+          "thinkanalytics-cloud-devops",
+          "avis-cloud-coe",
+          "avis-multi-region",
+        ],
+      },
+      {
+        name: "S3",
+        experienceIds: ["avis-cloud-coe"],
+        projectIds: ["cross-account-s3"],
+      },
+      {
+        name: "EC2",
+        projectIds: ["book-info"],
+      },
+      {
+        name: "VPC",
+        projectIds: ["book-info"],
+      },
+      {
+        name: "IAM",
+        experienceIds: ["avis-cloud-coe"],
+        projectIds: ["cross-account-s3"],
+      },
+      {
+        name: "Secrets Manager",
+        experienceIds: ["avis-cloud-coe"],
+      },
+      {
+        name: "CloudWatch",
+        experienceIds: ["thinkanalytics-cloud-devops"],
+        projectIds: ["cross-account-s3"],
+      },
+      {
+        name: "Lambda",
+        projectIds: ["cross-account-s3"],
+      },
     ],
   },
+
   {
     id: "containers",
     name: "Containers & Orchestration",
-    description: "Building, shipping and running containers.",
+    description: "Building, deploying and operating containerised workloads.",
     skills: [
-      { name: "Docker", experienceIds: ["avis-cloud-coe", "avis-devops-contract"] },
-      { name: "Kubernetes", experienceIds: ["avis-cloud-coe", "avis-devops-contract"] },
-      { name: "EKS", experienceIds: ["avis-cloud-coe", "avis-devops-contract"] },
-      { name: "ECS", experienceIds: ["avis-cloud-coe"] },
-      { name: "ECR", experienceIds: ["avis-cloud-coe"] },
-      { name: "kubectl", experienceIds: ["avis-cloud-coe", "avis-devops-contract"] },
-      { name: "Helm", experienceIds: ["avis-devops-contract"] },
+      {
+        name: "Docker",
+        experienceIds: [
+          "thinkanalytics-cloud-devops",
+          "avis-cloud-coe",
+          "avis-multi-region",
+        ],
+      },
+      {
+        name: "Kubernetes",
+        experienceIds: [
+          "thinkanalytics-cloud-devops",
+          "avis-cloud-coe",
+          "avis-multi-region",
+        ],
+      },
+      {
+        name: "EKS",
+        experienceIds: ["avis-multi-region"],
+      },
+      {
+        name: "ECS",
+        experienceIds: ["avis-cloud-coe"],
+      },
+      {
+        name: "ECR",
+        experienceIds: ["avis-cloud-coe"],
+      },
+      {
+        name: "kubectl",
+        experienceIds: [
+          "thinkanalytics-cloud-devops",
+          "avis-multi-region",
+        ],
+      },
+      {
+        name: "Helm",
+        experienceIds: ["avis-multi-region"],
+      },
     ],
   },
+
   {
     id: "iac",
     name: "Infrastructure as Code",
-    description: "Declarative, reviewable infrastructure.",
+    description: "Declarative and repeatable infrastructure provisioning.",
     skills: [
-      { name: "Terraform", experienceIds: ["avis-cloud-coe", "avis-devops-contract"] },
-      { name: "CloudFormation", experienceIds: ["avis-cloud-coe"] },
+      {
+        name: "Terraform",
+        experienceIds: [
+          "thinkanalytics-cloud-devops",
+          "avis-cloud-coe",
+          "avis-multi-region",
+        ],
+        projectIds: ["book-info"],
+      },
+      {
+        name: "CloudFormation",
+        experienceIds: ["avis-cloud-coe"],
+      },
     ],
   },
+
   {
     id: "cicd",
     name: "CI/CD",
-    description: "Delivery pipelines and release automation.",
+    description: "Delivery pipelines, release automation and infrastructure workflows.",
     skills: [
-      { name: "Jenkins", experienceIds: ["avis-cloud-coe"] },
-      { name: "GitHub", experienceIds: ["avis-cloud-coe", "avis-devops-contract"] },
+      {
+        name: "Jenkins",
+        experienceIds: [
+          "thinkanalytics-cloud-devops",
+          "avis-cloud-coe",
+          "avis-multi-region",
+        ],
+      },
+      {
+        name: "Concourse",
+        note: "Listed in technical skills on the resume.",
+      },
+      {
+        name: "ArgoCD",
+        note: "Listed in technical skills on the resume.",
+      },
+      {
+        name: "Git",
+        experienceIds: [
+          "thinkanalytics-cloud-devops",
+          "avis-cloud-coe",
+          "avis-multi-region",
+        ],
+      },
+      {
+        name: "GitHub",
+        note: "Used for source control and engineering projects.",
+      },
     ],
   },
+
   {
     id: "monitoring",
     name: "Monitoring & Observability",
-    description: "Knowing what production is doing.",
+    description: "Monitoring infrastructure and supporting production reliability.",
     skills: [
-      { name: "Prometheus", experienceIds: ["avis-cloud-coe"] },
-      { name: "Grafana", experienceIds: ["avis-cloud-coe"] },
-      { name: "Zabbix", experienceIds: ["avis-cloud-coe"] },
+      {
+        name: "CloudWatch",
+        experienceIds: ["thinkanalytics-cloud-devops"],
+        projectIds: ["cross-account-s3"],
+      },
+      {
+        name: "Prometheus",
+        note: "Listed in prior DevOps experience and technical toolkit.",
+      },
+      {
+        name: "Grafana",
+        note: "Listed in prior DevOps experience and technical toolkit.",
+      },
+      {
+        name: "Zabbix",
+        note: "Listed in prior DevOps experience and technical toolkit.",
+      },
+      {
+        name: "Postman",
+        note: "Listed in technical skills on the resume.",
+      },
     ],
   },
+
   {
     id: "networking",
     name: "Networking & Service Mesh",
-    description: "Traffic, routing and connectivity.",
+    description: "Traffic management, routing, security and service connectivity.",
     skills: [
-      { name: "Istio", experienceIds: ["avis-devops-contract"] },
-      { name: "Gloo Mesh", experienceIds: ["avis-devops-contract"] },
-      { name: "Route53", experienceIds: ["avis-cloud-coe"] },
+      {
+        name: "Istio",
+        experienceIds: ["avis-multi-region"],
+        projectIds: ["book-info"],
+      },
+      {
+        name: "Gloo Mesh",
+        experienceIds: ["avis-multi-region"],
+      },
+      {
+        name: "VPC",
+        projectIds: ["book-info"],
+      },
+      {
+        name: "Security Groups",
+        projectIds: ["book-info"],
+      },
     ],
   },
+
   {
     id: "databases",
-    name: "Databases",
-    description: "Managed and self-hosted data stores.",
+    name: "Databases & Data",
+    description: "Data platforms, databases and analytical technologies.",
     skills: [
-      { name: "RDS", experienceIds: ["avis-cloud-coe"] },
-      { name: "PostgreSQL", experienceIds: ["avis-cloud-coe"], projectIds: ["grimmspot"] },
-      { name: "PostGIS", projectIds: ["grimmspot"] },
+      {
+        name: "SQL",
+        projectIds: ["movie-review-model"],
+      },
+      {
+        name: "Hadoop",
+        experienceIds: ["cognizant-data-warehousing"],
+      },
+      {
+        name: "Hive",
+        experienceIds: ["cognizant-data-warehousing"],
+      },
+      {
+        name: "PySpark",
+        experienceIds: ["cognizant-data-warehousing"],
+      },
+      {
+        name: "Informatica PowerCenter",
+        experienceIds: ["cognizant-data-warehousing"],
+      },
     ],
   },
+
   {
     id: "programming",
     name: "Programming & Scripting",
-    description: "Automation and tooling.",
+    description: "Automation, data processing and scripting.",
     skills: [
-      { name: "Python", experienceIds: ["avis-cloud-coe"] },
-      { name: "Shell scripting", experienceIds: ["avis-cloud-coe", "avis-devops-contract"] },
-      { name: "TypeScript", projectIds: ["grimmspot"] },
-      { name: "React", projectIds: ["grimmspot"] },
+      {
+        name: "Python",
+        experienceIds: [
+          "thinkanalytics-cloud-devops",
+          "cognizant-data-warehousing",
+        ],
+        projectIds: ["movie-review-model"],
+      },
+      {
+        name: "Shell scripting",
+        experienceIds: [
+          "thinkanalytics-cloud-devops",
+          "cognizant-data-warehousing",
+          "avis-multi-region",
+        ],
+      },
+      {
+        name: "SQL",
+        experienceIds: ["cognizant-programmer-analyst"],
+        projectIds: ["movie-review-model"],
+      },
+      {
+        name: "HTML/CSS",
+      },
+      {
+        name: "BeautifulSoup",
+        projectIds: ["movie-review-model"],
+      },
+      {
+        name: "NumPy",
+        experienceIds: ["cognizant-data-warehousing"],
+        projectIds: ["movie-review-model"],
+      },
+      {
+        name: "Pandas",
+        experienceIds: ["cognizant-data-warehousing"],
+        projectIds: ["movie-review-model"],
+      },
     ],
   },
+
+  {
+    id: "analytics",
+    name: "Data & Analytics",
+    description: "Data engineering, visualization and machine learning.",
+    skills: [
+      {
+        name: "Tableau",
+        experienceIds: ["cognizant-programmer-analyst"],
+        projectIds: ["movie-review-model"],
+      },
+      {
+        name: "Scikit-Learn",
+        projectIds: ["movie-review-model"],
+      },
+      {
+        name: "RandomForest",
+        projectIds: ["movie-review-model"],
+      },
+      {
+        name: "PySpark",
+        experienceIds: ["cognizant-data-warehousing"],
+      },
+      {
+        name: "Hadoop",
+        experienceIds: ["cognizant-data-warehousing"],
+      },
+      {
+        name: "Hive",
+        experienceIds: ["cognizant-data-warehousing"],
+      },
+      {
+        name: "Informatica PowerCenter",
+        experienceIds: ["cognizant-data-warehousing"],
+      },
+    ],
+  },
+
   {
     id: "tools",
     name: "Systems & Tools",
-    description: "The everyday working environment.",
+    description: "Everyday engineering and development tools.",
     skills: [
-      { name: "Linux", experienceIds: ["avis-cloud-coe", "avis-devops-contract"] },
-      { name: "Git", experienceIds: ["avis-cloud-coe"] },
-      { name: "Supabase", projectIds: ["grimmspot"] },
+      {
+        name: "Linux",
+        experienceIds: [
+          "thinkanalytics-cloud-devops",
+          "avis-cloud-coe",
+          "avis-multi-region",
+        ],
+      },
+      {
+        name: "Git",
+        experienceIds: [
+          "thinkanalytics-cloud-devops",
+          "avis-cloud-coe",
+          "avis-multi-region",
+        ],
+      },
     ],
   },
 ];
 
 export const projects: Project[] = [
   {
-    id: "grimmspot",
-    name: "GrimmSpot",
-    tagline: "Discover the local spots that maps forget.",
+    id: "book-info",
+    name: "Book Info Application",
+    tagline: "AWS infrastructure and Istio service mesh deployment.",
+
     description:
-      "A map-based platform for discovering local street vendors, food carts, temporary shops and hidden local spots.",
-    status: "In development",
-    year: PLACEHOLDER,
+      "A Book Info application deployed on AWS infrastructure provisioned with Terraform, demonstrating secure cloud networking, EC2-based application deployment and Istio service mesh capabilities.",
+
+    status: "Completed",
+    year: "Project",
+
     problem:
-      "Street vendors, food carts and pop-up shops are a huge part of local life, but they are almost invisible on mainstream maps — they move, they have no fixed listing, and they are found mostly by word of mouth.",
+      "Deploying an application on AWS requires secure networking, controlled access and repeatable infrastructure provisioning while also providing a practical environment for service mesh implementation.",
+
     solution:
-      "A community-driven map where spots can be added, located and described by the people who actually visit them, with geospatial search so you can see what is around you right now.",
+      "Provisioned AWS infrastructure using Terraform and deployed the Book Info application on EC2 with Istio for service mesh capabilities.",
+
     architecture:
-      "React + TypeScript front end talking to Supabase for data, authentication and storage, with PostGIS powering location queries and a map layer for browsing and adding spots.",
+      "Terraform provisions the AWS VPC, subnets, routing, security groups and EC2 infrastructure. The Book Info application runs on the provisioned environment with Istio providing service mesh functionality.",
+
     responsibilities: [
-      "Product concept and data model.",
-      "Front-end application in React and TypeScript.",
-      "Geospatial queries and schema design with PostGIS.",
-      "Deployment and iteration.",
+      "Provisioned VPC, subnets, routing and security groups using Terraform.",
+      "Provisioned EC2 infrastructure for application deployment.",
+      "Deployed the Book Info application.",
+      "Implemented Istio-based service mesh capabilities.",
+      "Designed the infrastructure with secure and repeatable deployment practices.",
     ],
-    technologies: ["React", "TypeScript", "Supabase", "PostGIS", "Maps", "Lovable"],
-    results: [PLACEHOLDER],
+
+    technologies: [
+      "AWS",
+      "Terraform",
+      "VPC",
+      "EC2",
+      "Security Groups",
+      "Istio",
+    ],
+
+    results: [
+      "Created a repeatable AWS infrastructure deployment using Terraform.",
+      "Demonstrated end-to-end cloud infrastructure provisioning and application deployment.",
+      "Implemented Istio service mesh capabilities on the Book Info application.",
+    ],
+
     githubUrl: PLACEHOLDER,
     liveUrl: PLACEHOLDER,
+
     screenshots: [
-      { src: "/images/projects/grimmspot-1.jpg", alt: "GrimmSpot screenshot placeholder" },
-      { src: "/images/projects/grimmspot-2.jpg", alt: "GrimmSpot screenshot placeholder" },
+      {
+        src: "/images/book-info-coverpic.jpg",
+        alt: "Book Info application screenshot",
+      },
     ],
+
     architectureDiagram: {
-      src: "/images/projects/grimmspot-architecture.png",
-      alt: "GrimmSpot architecture diagram placeholder",
+      src: "/images/architecture-bookinfo.jpg",
+      alt: "Book Info application architecture diagram",
     },
+
+    featured: true,
+  },
+
+  {
+    id: "movie-review-model",
+    name: "Movie Review Model",
+    tagline: "IMDb data pipeline, analytics and machine learning.",
+
+    description:
+      "A data and machine learning project using IMDb movie review data collected with BeautifulSoup, processed with Python, NumPy and Pandas, visualized with Tableau and used to train a RandomForest regression model.",
+
+    status: "Completed",
+    year: "Project",
+
+    problem:
+      "Large-scale movie review data requires collection, cleaning, structured storage and analysis before meaningful insights or predictive models can be produced.",
+
+    solution:
+      "Scraped and stored more than 5,000 IMDb movie records using BeautifulSoup and SQL, cleansed the dataset with Python data-processing libraries, built Tableau dashboards and trained a RandomForest regression model.",
+
+    architecture:
+      "IMDb data is collected using BeautifulSoup, stored using SQL, cleaned and transformed with Python, NumPy and Pandas, visualized in Tableau, and passed into a Scikit-Learn RandomForest regression model for prediction.",
+
+    responsibilities: [
+      "Scraped 5,000+ IMDb movie records using BeautifulSoup.",
+      "Stored and queried movie data using SQL.",
+      "Cleaned and transformed datasets using Python, NumPy and Pandas.",
+      "Built Tableau dashboards for data analysis and visualization.",
+      "Trained a RandomForest regression model using Scikit-Learn.",
+    ],
+
+    technologies: [
+      "Python",
+      "BeautifulSoup",
+      "SQL",
+      "NumPy",
+      "Pandas",
+      "Tableau",
+      "Scikit-Learn",
+      "RandomForest",
+    ],
+
+    results: [
+      "Processed more than 5,000 IMDb movie records.",
+      "Improved insights quality by approximately 40% through data cleansing and visualization.",
+      "Achieved 96% prediction accuracy with the RandomForest regression model.",
+    ],
+
+    githubUrl: PLACEHOLDER,
+    liveUrl: PLACEHOLDER,
+
+    screenshots: [
+      {
+        src: "/images/movie-review-model.jpg",
+        alt: "Movie Review Model application screenshot",
+      },
+    ],
+
+    architectureDiagram: null,
+
+    featured: true,
+  },
+
+  {
+    id: "cross-account-s3",
+    name: "Cross-Account S3 Replication",
+    tagline: "Automated cross-account and cross-region AWS data replication.",
+
+    description:
+      "An AWS-based cross-account S3 replication solution designed to synchronize data across AWS regions while using IAM, Lambda and CloudWatch for secure automation and operational monitoring.",
+
+    status: "Completed",
+    year: "Project",
+
+    problem:
+      "Critical data requires reliable replication across accounts and regions to improve availability, reduce recovery risk and maintain secure data transfer between AWS environments.",
+
+    solution:
+      "Engineered cross-account S3 replication using IAM roles and bucket policies, with AWS Lambda and CloudWatch supporting replication automation and monitoring.",
+
+    architecture:
+      "Source S3 data is replicated across AWS accounts and regions using IAM-controlled permissions and S3 bucket policies. AWS Lambda supports automation while CloudWatch provides operational monitoring.",
+
+    responsibilities: [
+      "Engineered cross-account S3 replication between AWS environments.",
+      "Configured IAM roles for secure cross-account access.",
+      "Configured S3 bucket policies for controlled data transfer.",
+      "Implemented AWS Lambda automation around the replication workflow.",
+      "Configured CloudWatch monitoring for replication operations.",
+    ],
+
+    technologies: [
+      "AWS S3",
+      "IAM",
+      "AWS Lambda",
+      "CloudWatch",
+      "Cross-Account AWS",
+      "Cross-Region Replication",
+    ],
+
+    results: [
+      "Improved data redundancy and availability across AWS regions.",
+      "Implemented secure cross-account data transfer using IAM and S3 policies.",
+      "Reduced recovery point objective to near-zero.",
+    ],
+
+    githubUrl: PLACEHOLDER,
+    liveUrl: PLACEHOLDER,
+
+    screenshots: [
+      {
+        src: "/images/s3-account-replication.jpg",
+        alt: "S3 Account Replication application screenshot",
+      },
+    ],
+
+    architectureDiagram: null,
+
     featured: true,
   },
 ];
@@ -398,120 +950,223 @@ export const hobbies: Hobby[] = [
     description:
       "Riding is how I clear my head — planning routes, maintaining the bike and covering distance.",
     story: PLACEHOLDER,
-    status: PLACEHOLDER,
+    status: "Active",
     since: PLACEHOLDER,
     milestones: [{ date: PLACEHOLDER, text: PLACEHOLDER }],
     images: [
-      { src: "/images/hobbies/motorcycling-1.jpg", alt: "Motorcycling photo placeholder" },
-      { src: "/images/hobbies/motorcycling-2.jpg", alt: "Motorcycling photo placeholder" },
+      {
+        src: "/images/hobbies/motorcycling-1.jpg",
+        alt: "Motorcycling photo placeholder",
+      },
+      {
+        src: "/images/hobbies/motorcycling-2.jpg",
+        alt: "Motorcycling photo placeholder",
+      },
     ],
   },
+
   {
     id: "travel",
     title: "Travel / Exploration",
     tagline: "Places, people, detours.",
-    description: "Exploring new places, usually on two wheels and usually off the obvious route.",
+    description:
+      "Exploring new places, usually on two wheels and usually off the obvious route.",
     story: PLACEHOLDER,
-    status: PLACEHOLDER,
+    status: "Active",
     since: PLACEHOLDER,
     milestones: [{ date: PLACEHOLDER, text: PLACEHOLDER }],
     images: [
-      { src: "/images/hobbies/travel-1.jpg", alt: "Travel photo placeholder" },
-      { src: "/images/hobbies/travel-2.jpg", alt: "Travel photo placeholder" },
+      {
+        src: "/images/hobbies/travel-1.jpg",
+        alt: "Travel photo placeholder",
+      },
+      {
+        src: "/images/hobbies/travel-2.jpg",
+        alt: "Travel photo placeholder",
+      },
     ],
   },
+
   {
     id: "content-creation",
     title: "Content Creation",
     tagline: "Documenting the ride and the build.",
-    description: "Capturing rides, trips and projects, and shaping them into something watchable.",
+    description:
+      "Capturing rides, trips and technology projects and shaping them into watchable content.",
     story: PLACEHOLDER,
-    status: PLACEHOLDER,
+    status: "Active",
     since: PLACEHOLDER,
     milestones: [{ date: PLACEHOLDER, text: PLACEHOLDER }],
     images: [
-      { src: "/images/hobbies/content-1.jpg", alt: "Content creation photo placeholder" },
+      {
+        src: "/images/hobbies/content-1.jpg",
+        alt: "Content creation photo placeholder",
+      },
     ],
   },
+
   {
     id: "building",
     title: "Technology / Building Projects",
     tagline: "Side projects as a laboratory.",
     description:
-      "Building things outside work — small tools, side projects and experiments that teach me something new.",
+      "Building technology projects and experiments outside work to learn new tools, architectures and engineering practices.",
     story: PLACEHOLDER,
-    status: "Currently building GrimmSpot",
+    status: "Currently building",
     since: PLACEHOLDER,
     milestones: [{ date: PLACEHOLDER, text: PLACEHOLDER }],
-    images: [{ src: "/images/hobbies/building-1.jpg", alt: "Project build photo placeholder" }],
+    images: [
+      {
+        src: "/images/hobbies/building-1.jpg",
+        alt: "Technology project build photo placeholder",
+      },
+    ],
   },
 ];
 
 export const timeline: TimelineEntry[] = [
   {
-    id: "t-cloud-coe",
-    date: "Nov 2024",
-    sortKey: "2024-11",
-    title: "Cloud-COE Engineer, Avis Budget Group",
+    id: "t-thinkanalytics",
+    date: "Mar 2025",
+    sortKey: "2025-03",
+    title: "Cloud DevOps Engineer, ThinkAnalytics",
     category: "Career",
-    description: "Joined the Cloud Center of Excellence working on AWS platform engineering.",
+    description:
+      "Joined ThinkAnalytics as a Cloud DevOps Engineer, working on AWS production support, Kubernetes, Terraform, monitoring and cloud automation.",
     route: "/profile",
   },
+
   {
-    id: "t-devops-contract",
+    id: "t-avis",
     date: "Oct 2023",
     sortKey: "2023-10",
-    title: "DevOps Engineer — Multi-Region Deployment, Avis Budget Group",
+    title: "Cloud COE Engineer, Avis Budget Group",
     category: "Career",
-    description: "Contract role focused on multi-region Kubernetes deployment and Terraform.",
+    description:
+      "Worked on AWS cloud infrastructure, Terraform, CloudFormation, Jenkins, service lifecycle automation and multi-region platform engineering.",
     route: "/profile",
   },
+
   {
-    id: "t-grimmspot",
-    date: PLACEHOLDER,
-    sortKey: "2025-01",
-    title: "Started building GrimmSpot",
-    category: "Project",
-    description: "A map-based platform for discovering local vendors and hidden spots.",
-    route: "/projects/grimmspot",
+    id: "t-cognizant-analyst",
+    date: "Mar 2023",
+    sortKey: "2023-03",
+    title: "Programmer Analyst Trainee, Cognizant",
+    category: "Career",
+    description:
+      "Worked on Digital Dashboard Transformation for Otsuka Pharmaceuticals using SQL and Tableau.",
+    route: "/profile",
   },
+
+  {
+    id: "t-cognizant-intern",
+    date: "Mar 2022",
+    sortKey: "2022-03",
+    title: "Data Warehousing Intern, Cognizant",
+    category: "Career",
+    description:
+      "Worked with PySpark, Hive, Hadoop, Informatica, Python, SQL and shell scripting.",
+    route: "/profile",
+  },
+
   {
     id: "t-education",
-    date: PLACEHOLDER,
-    sortKey: "0000",
-    title: PLACEHOLDER,
+    date: "Jul 2022",
+    sortKey: "2022-07",
+    title: "Bachelor of Technology — Heritage Institute of Technology",
     category: "Education",
-    description: PLACEHOLDER,
+    description:
+      "Completed Bachelor of Technology with an 8.0 CGPA.",
+    route: "/profile",
+  },
+
+  {
+    id: "t-book-info",
+    date: "Project",
+    sortKey: "2021-01",
+    title: "Book Info Application",
+    category: "Project",
+    description:
+      "Provisioned AWS infrastructure with Terraform and implemented an Istio-based Book Info application.",
+    route: "/projects/book-info",
+  },
+
+  {
+    id: "t-movie-model",
+    date: "Project",
+    sortKey: "2021-02",
+    title: "Movie Review Model",
+    category: "Project",
+    description:
+      "Built an IMDb data pipeline and RandomForest model using Python, SQL, Pandas, NumPy, Tableau and Scikit-Learn.",
+    route: "/projects/movie-review-model",
+  },
+
+  {
+    id: "t-s3-replication",
+    date: "Project",
+    sortKey: "2021-03",
+    title: "Cross-Account S3 Replication",
+    category: "Project",
+    description:
+      "Engineered secure cross-account and cross-region S3 replication using IAM, Lambda and CloudWatch.",
+    route: "/projects/cross-account-s3",
   },
 ];
 
 export const now: { updated: string; sections: NowSection[] } = {
-  updated: PLACEHOLDER,
+  updated: "September 2026",
+
   sections: [
     {
       id: "working-on",
       title: "Currently Working On",
-      items: ["Cloud platform engineering at Avis Budget Group (AWS, ECS/EKS, Terraform).", PLACEHOLDER],
+      items: [
+        "Cloud DevOps engineering at ThinkAnalytics.",
+        "AWS production support, Kubernetes, Terraform and cloud monitoring.",
+        "Improving operational reliability and reducing manual infrastructure work.",
+      ],
     },
+
     {
       id: "learning",
       title: "Currently Learning",
-      items: [PLACEHOLDER],
+      items: [
+        "Advanced Kubernetes and cloud-native architecture.",
+        "Infrastructure automation and CI/CD engineering.",
+        "GitHub Actions and modern DevOps delivery workflows.",
+      ],
     },
+
     {
       id: "building",
       title: "Currently Building",
-      items: ["GrimmSpot — a map-based platform for discovering local spots.", PLACEHOLDER],
+      items: [
+        "A professional DevOps portfolio with a terminal-style interface.",
+        "Hands-on CI/CD automation and cloud deployment workflows.",
+      ],
     },
+
     {
       id: "exploring",
       title: "Currently Exploring",
-      items: [PLACEHOLDER],
+      items: [
+        "AWS platform engineering.",
+        "Kubernetes and service mesh technologies.",
+        "Infrastructure as Code and deployment automation.",
+        "MLOps and platform engineering.",
+      ],
     },
+
     {
       id: "goals",
       title: "Current Goals",
-      items: [PLACEHOLDER],
+      items: [
+        "Deepen AWS and Kubernetes expertise.",
+        "Build production-quality DevOps and cloud projects.",
+        "Strengthen CI/CD and infrastructure automation skills.",
+        "Prepare for high-level DevOps and cloud engineering interviews.",
+      ],
     },
   ],
 };

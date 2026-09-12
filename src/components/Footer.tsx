@@ -64,7 +64,7 @@ export function Footer() {
 
       <div className="border-t border-border/70 py-4">
         <p className="mx-auto w-full max-w-6xl px-4 font-mono text-xs text-muted-foreground sm:px-6">
-          Built with React • TypeScript • ❤️
+          Built with ☕, curiosity, and a questionable number of terminal commands.
         </p>
       </div>
     </footer>
