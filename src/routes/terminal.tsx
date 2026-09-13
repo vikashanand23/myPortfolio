@@ -7,7 +7,7 @@ import { Terminal } from "@/components/Terminal";
 export const Route = createFileRoute("/terminal")({
   head: () => ({
     meta: [
-      { title: "Terminal — Vikash Anand" },
+      { title: "vikash@portfolio:~$terminal" },
       {
         name: "description",
         content:

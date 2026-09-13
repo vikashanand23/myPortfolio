@@ -6,7 +6,7 @@ import { timeline } from "@/data/portfolio";
 export const Route = createFileRoute("/timeline")({
   head: () => ({
     meta: [
-      { title: "Timeline — Vikash Anand" },
+      { title: "vikash@portfolio:~$timeline" },
       {
         name: "description",
         content: "A chronological view of Vikash Anand's career, education, projects and technical milestones.",

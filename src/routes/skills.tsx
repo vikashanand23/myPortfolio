@@ -6,7 +6,7 @@ import { skillCategories } from "@/data/portfolio";
 export const Route = createFileRoute("/skills")({
   head: () => ({
     meta: [
-      { title: "Skills — Vikash Anand" },
+      { title: "vikash@portfolio:~$skills" },
       {
         name: "description",
         content:

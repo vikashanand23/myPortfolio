@@ -6,7 +6,7 @@ import { navItems, personal } from "@/data/portfolio";
 export const Route = createFileRoute("/help")({
   head: () => ({
     meta: [
-      { title: "Help — Vikash Anand" },
+      { title: "vikash@portfolio:~$help" },
       {
         name: "description",
         content: "Manual page for Vikash Anand's portfolio: terminal commands, keyboard shortcuts and site navigation.",

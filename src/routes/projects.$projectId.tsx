@@ -17,7 +17,7 @@ export const Route = createFileRoute("/projects/$projectId")({
     const { project } = loaderData;
     return {
       meta: [
-        { title: `${project.name} — Project by Vikash Anand` },
+        { title: `vikash@portfolio:~$/${project.name}` },
         { name: "description", content: project.description },
         { property: "og:title", content: `${project.name} — Project by Vikash Anand` },
         { property: "og:description", content: project.description },

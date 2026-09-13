@@ -8,7 +8,7 @@ import { isPlaceholder, personal, projects, quickFacts, socials } from "@/data/p
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Vikash Anand | Cloud & DevOps Engineer" },
+      { title: "vikash@portfolio:~$home" },
       {
         name: "description",
         content:

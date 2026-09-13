@@ -6,7 +6,7 @@ import { hobbies } from "@/data/portfolio";
 export const Route = createFileRoute("/hobbies")({
   head: () => ({
     meta: [
-      { title: "Hobbies — Vikash Anand" },
+      { title: "vikash@portfolio:~$hobbies" },
       {
         name: "description",
         content: "Life outside the terminal: motorcycling, travel and exploration, content creation and building side projects.",

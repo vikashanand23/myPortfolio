@@ -8,7 +8,7 @@ import { isPlaceholder, personal, socials } from "@/data/portfolio";
 export const Route = createFileRoute("/contact")({
   head: () => ({
     meta: [
-      { title: "Contact — Vikash Anand" },
+      { title: "vikash@portfolio:~$contact" },
       {
         name: "description",
         content: "Get in touch with Vikash Anand, Cloud and DevOps Engineer based in Pune, India.",

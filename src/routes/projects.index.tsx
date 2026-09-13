@@ -6,7 +6,7 @@ import { projects } from "@/data/portfolio";
 export const Route = createFileRoute("/projects/")({
   head: () => ({
     meta: [
-      { title: "Projects — Vikash Anand" },
+      { title: "vikash@portfolio:~$projects" },
       {
         name: "description",
         content: "Projects designed and built by Vikash Anand, including GrimmSpot, a map-based local discovery platform.",

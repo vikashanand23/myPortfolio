@@ -15,7 +15,7 @@ import {
 export const Route = createFileRoute("/profile")({
   head: () => ({
     meta: [
-      { title: "Profile — Vikash Anand" },
+      { title: "vikash@portfolio:~$profile" },
       {
         name: "description",
         content:
