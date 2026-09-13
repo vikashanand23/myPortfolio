@@ -9,7 +9,8 @@ export const Route = createFileRoute("/projects/")({
       { title: "vikash@portfolio:~$projects" },
       {
         name: "description",
-        content: "Projects designed and built by Vikash Anand, including GrimmSpot, a map-based local discovery platform.",
+        content:
+          "Projects designed and built by Vikash Anand, including GrimmSpot, a map-based local discovery platform.",
       },
       { property: "og:title", content: "Projects — Vikash Anand" },
       { property: "og:description", content: "Things I have designed, built and shipped." },

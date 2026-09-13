@@ -17,7 +17,8 @@ export const Route = createFileRoute("/")({
       { property: "og:title", content: "Vikash Anand | Cloud & DevOps Engineer" },
       {
         property: "og:description",
-        content: "AWS, Kubernetes, Terraform and automation — plus an interactive Linux-style terminal.",
+        content:
+          "AWS, Kubernetes, Terraform and automation — plus an interactive Linux-style terminal.",
       },
       { property: "og:type", content: "profile" },
       { property: "og:url", content: "/" },
@@ -47,13 +48,20 @@ function Home() {
   return (
     <SiteLayout>
       <section className="relative">
-        <div className="grid-backdrop pointer-events-none absolute inset-x-0 -top-24 h-80" aria-hidden />
+        <div
+          className="grid-backdrop pointer-events-none absolute inset-x-0 -top-24 h-80"
+          aria-hidden
+        />
         <div className="relative grid items-center gap-10 md:grid-cols-[1.4fr_1fr]">
           <div className="animate-rise">
             <p className="prompt-label text-primary">$ whoami</p>
-            <h1 className="mt-3 text-4xl font-semibold leading-tight sm:text-5xl">{personal.name}</h1>
+            <h1 className="mt-3 text-4xl font-semibold leading-tight sm:text-5xl">
+              {personal.name}
+            </h1>
             <p className="mt-2 text-lg text-primary">{personal.title}</p>
-            <p className="mt-5 max-w-xl text-base leading-relaxed text-muted-foreground">{personal.shortIntro}</p>
+            <p className="mt-5 max-w-xl text-base leading-relaxed text-muted-foreground">
+              {personal.shortIntro}
+            </p>
 
             <dl className="mt-6 flex flex-wrap gap-x-8 gap-y-3 text-sm">
               <div>
@@ -148,7 +156,10 @@ function Home() {
             <h2 id="featured-projects" className="prompt-label text-primary">
               $ ls ~/projects --featured
             </h2>
-            <Link to="/projects" className="font-mono text-sm text-muted-foreground hover:text-primary">
+            <Link
+              to="/projects"
+              className="font-mono text-sm text-muted-foreground hover:text-primary"
+            >
               all projects →
             </Link>
           </div>

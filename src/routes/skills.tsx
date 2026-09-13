@@ -13,7 +13,10 @@ export const Route = createFileRoute("/skills")({
           "Technical skills of Vikash Anand across AWS, Kubernetes, Terraform, CI/CD, monitoring, networking, databases and Linux.",
       },
       { property: "og:title", content: "Skills — Vikash Anand" },
-      { property: "og:description", content: "AWS, Kubernetes, Terraform, CI/CD, observability and Linux." },
+      {
+        property: "og:description",
+        content: "AWS, Kubernetes, Terraform, CI/CD, observability and Linux.",
+      },
       { property: "og:type", content: "website" },
       { property: "og:url", content: "/skills" },
     ],

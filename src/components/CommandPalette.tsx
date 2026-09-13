@@ -13,7 +13,13 @@ import { groupResults, searchPortfolio } from "@/lib/portfolioSearch";
 import { navItems } from "@/data/portfolio";
 import { toRoute } from "@/lib/routes";
 
-export function CommandPalette({ open, onOpenChange }: { open: boolean; onOpenChange: (v: boolean) => void }) {
+export function CommandPalette({
+  open,
+  onOpenChange,
+}: {
+  open: boolean;
+  onOpenChange: (v: boolean) => void;
+}) {
   const navigate = useNavigate();
   const [query, setQuery] = useState("");
 
@@ -57,10 +63,16 @@ export function CommandPalette({ open, onOpenChange }: { open: boolean; onOpenCh
               grouped.map(([category, results]) => (
                 <CommandGroup key={category} heading={category}>
                   {results.map((result) => (
-                    <CommandItem key={result.id} value={result.id} onSelect={() => go(result.route)}>
+                    <CommandItem
+                      key={result.id}
+                      value={result.id}
+                      onSelect={() => go(result.route)}
+                    >
                       <div className="flex min-w-0 flex-col">
                         <span className="truncate text-sm">{result.title}</span>
-                        <span className="truncate text-xs text-muted-foreground">{result.snippet}</span>
+                        <span className="truncate text-xs text-muted-foreground">
+                          {result.snippet}
+                        </span>
                       </div>
                     </CommandItem>
                   ))}

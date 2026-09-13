@@ -3,7 +3,13 @@ import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { CommandPalette } from "@/components/CommandPalette";
 
-export function SiteLayout({ children, fullBleed = false }: { children: ReactNode; fullBleed?: boolean }) {
+export function SiteLayout({
+  children,
+  fullBleed = false,
+}: {
+  children: ReactNode;
+  fullBleed?: boolean;
+}) {
   const [paletteOpen, setPaletteOpen] = useState(false);
 
   useEffect(() => {
@@ -27,7 +33,11 @@ export function SiteLayout({ children, fullBleed = false }: { children: ReactNod
       </a>
       <Navbar onOpenPalette={() => setPaletteOpen(true)} />
       <main id="main" className="flex-1">
-        {fullBleed ? children : <div className="mx-auto w-full max-w-6xl px-4 py-12 sm:px-6 sm:py-16">{children}</div>}
+        {fullBleed ? (
+          children
+        ) : (
+          <div className="mx-auto w-full max-w-6xl px-4 py-12 sm:px-6 sm:py-16">{children}</div>
+        )}
       </main>
       {!fullBleed && <Footer />}
       <CommandPalette open={paletteOpen} onOpenChange={setPaletteOpen} />
@@ -48,7 +58,9 @@ export function PageHeader({
     <header className="animate-rise mb-10 max-w-3xl">
       <p className="prompt-label text-primary">{command}</p>
       <h1 className="mt-3 text-3xl font-semibold sm:text-4xl">{title}</h1>
-      {description && <p className="mt-3 text-base leading-relaxed text-muted-foreground">{description}</p>}
+      {description && (
+        <p className="mt-3 text-base leading-relaxed text-muted-foreground">{description}</p>
+      )}
     </header>
   );
 }

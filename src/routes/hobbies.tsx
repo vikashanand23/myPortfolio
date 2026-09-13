@@ -9,10 +9,14 @@ export const Route = createFileRoute("/hobbies")({
       { title: "vikash@portfolio:~$hobbies" },
       {
         name: "description",
-        content: "Life outside the terminal: motorcycling, travel and exploration, content creation and building side projects.",
+        content:
+          "Life outside the terminal: motorcycling, travel and exploration, content creation and building side projects.",
       },
       { property: "og:title", content: "Hobbies — Vikash Anand" },
-      { property: "og:description", content: "Motorcycling, travel, content creation and building things." },
+      {
+        property: "og:description",
+        content: "Motorcycling, travel, content creation and building things.",
+      },
       { property: "og:type", content: "website" },
       { property: "og:url", content: "/hobbies" },
     ],

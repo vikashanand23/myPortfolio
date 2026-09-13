@@ -14,7 +14,10 @@ export const Route = createFileRoute("/contact")({
         content: "Get in touch with Vikash Anand, Cloud and DevOps Engineer based in Pune, India.",
       },
       { property: "og:title", content: "Contact — Vikash Anand" },
-      { property: "og:description", content: "Reach out about cloud, DevOps and infrastructure work." },
+      {
+        property: "og:description",
+        content: "Reach out about cloud, DevOps and infrastructure work.",
+      },
       { property: "og:type", content: "website" },
       { property: "og:url", content: "/contact" },
     ],
@@ -176,7 +179,7 @@ function ContactPage() {
               {status === "submitting" && <Loader2 className="h-4 w-4 animate-spin" aria-hidden />}
               {status === "submitting" ? "Sending..." : "Send message"}
             </button>
-            
+
             <p aria-live="polite" className="text-sm">
               {status === "success" && (
                 <span className="text-terminal-success">

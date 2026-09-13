@@ -12,7 +12,12 @@ export const Route = createFileRoute("/projects/$projectId")({
   },
   head: ({ loaderData }) => {
     if (!loaderData) {
-      return { meta: [{ title: "Project unavailable — Vikash Anand" }, { name: "robots", content: "noindex" }] };
+      return {
+        meta: [
+          { title: "Project unavailable — Vikash Anand" },
+          { name: "robots", content: "noindex" },
+        ],
+      };
     }
     const { project } = loaderData;
     return {
@@ -34,8 +39,15 @@ export const Route = createFileRoute("/projects/$projectId")({
 function ProjectNotFound() {
   return (
     <SiteLayout>
-      <PageHeader command="$ cat project" title="Project not found" description="That project does not exist (yet)." />
-      <Link to="/projects" className="font-mono text-sm text-primary underline-offset-4 hover:underline">
+      <PageHeader
+        command="$ cat project"
+        title="Project not found"
+        description="That project does not exist (yet)."
+      />
+      <Link
+        to="/projects"
+        className="font-mono text-sm text-primary underline-offset-4 hover:underline"
+      >
         ← back to projects
       </Link>
     </SiteLayout>
@@ -56,7 +68,11 @@ function ProjectDetail() {
 
   return (
     <SiteLayout>
-      <PageHeader command={`$ cat ~/projects/${project.id}.md`} title={project.name} description={project.tagline} />
+      <PageHeader
+        command={`$ cat ~/projects/${project.id}.md`}
+        title={project.name}
+        description={project.tagline}
+      />
 
       <div className="flex flex-wrap items-center gap-3">
         <span className="rounded border border-border bg-surface px-2 py-1 font-mono text-xs text-muted-foreground">
@@ -104,7 +120,10 @@ function ProjectDetail() {
         <Block title="$ cat stack.txt">
           <ul className="flex flex-wrap gap-1.5">
             {project.technologies.map((tech) => (
-              <li key={tech} className="rounded border border-border bg-surface px-2 py-0.5 font-mono text-[11px]">
+              <li
+                key={tech}
+                className="rounded border border-border bg-surface px-2 py-0.5 font-mono text-[11px]"
+              >
                 {tech}
               </li>
             ))}
@@ -148,7 +167,10 @@ function ProjectDetail() {
       )}
 
       <div className="mt-12">
-        <Link to="/projects" className="font-mono text-sm text-primary underline-offset-4 hover:underline">
+        <Link
+          to="/projects"
+          className="font-mono text-sm text-primary underline-offset-4 hover:underline"
+        >
           ← back to projects
         </Link>
       </div>

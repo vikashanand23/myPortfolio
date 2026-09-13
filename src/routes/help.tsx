@@ -9,10 +9,14 @@ export const Route = createFileRoute("/help")({
       { title: "vikash@portfolio:~$help" },
       {
         name: "description",
-        content: "Manual page for Vikash Anand's portfolio: terminal commands, keyboard shortcuts and site navigation.",
+        content:
+          "Manual page for Vikash Anand's portfolio: terminal commands, keyboard shortcuts and site navigation.",
       },
       { property: "og:title", content: "Help — Vikash Anand" },
-      { property: "og:description", content: "Terminal commands, shortcuts and how to navigate this site." },
+      {
+        property: "og:description",
+        content: "Terminal commands, shortcuts and how to navigate this site.",
+      },
       { property: "og:type", content: "website" },
       { property: "og:url", content: "/help" },
     ],
@@ -50,8 +54,9 @@ function HelpPage() {
 
         <ManSection title="DESCRIPTION">
           <p className="max-w-2xl font-mono text-sm leading-relaxed text-muted-foreground">
-            A portfolio site with a conventional set of pages and an interactive Linux-style terminal. Everything on
-            the site can be reached by clicking, by typing a command in the terminal, or through the command palette.
+            A portfolio site with a conventional set of pages and an interactive Linux-style
+            terminal. Everything on the site can be reached by clicking, by typing a command in the
+            terminal, or through the command palette.
           </p>
         </ManSection>
 
@@ -62,7 +67,9 @@ function HelpPage() {
               .map((spec) => (
                 <div key={spec.name}>
                   <dt className="font-mono text-sm text-foreground">{spec.usage ?? spec.name}</dt>
-                  <dd className="pl-6 font-mono text-sm text-muted-foreground">{spec.description}</dd>
+                  <dd className="pl-6 font-mono text-sm text-muted-foreground">
+                    {spec.description}
+                  </dd>
                 </div>
               ))}
           </dl>
@@ -98,7 +105,10 @@ function HelpPage() {
         </ManSection>
 
         <ManSection title="SEE ALSO">
-          <Link to="/terminal" className="font-mono text-sm text-primary underline-offset-4 hover:underline">
+          <Link
+            to="/terminal"
+            className="font-mono text-sm text-primary underline-offset-4 hover:underline"
+          >
             terminal(1)
           </Link>
         </ManSection>

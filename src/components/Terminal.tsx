@@ -9,12 +9,20 @@ type Block = { id: number; input?: string; lines: TerminalLine[] };
 
 const prompt = `${personal.terminalUser}@${personal.terminalHost}:~$`;
 
-function LineView({ line, onNavigate }: { line: TerminalLine; onNavigate: (route: string) => void }) {
+function LineView({
+  line,
+  onNavigate,
+}: {
+  line: TerminalLine;
+  onNavigate: (route: string) => void;
+}) {
   switch (line.kind) {
     case "spacer":
       return <div className="h-3" aria-hidden />;
     case "heading":
-      return <p className="mt-1 font-mono text-sm font-semibold text-terminal-accent">{line.text}</p>;
+      return (
+        <p className="mt-1 font-mono text-sm font-semibold text-terminal-accent">{line.text}</p>
+      );
     case "kv":
       return (
         <p className="flex flex-wrap gap-x-3 font-mono text-sm">
@@ -95,7 +103,10 @@ export function Terminal({ onOpenPalette }: { onOpenPalette?: () => void }) {
       }
       setBlocks((b) => [...b, { id: counter.current++, input: value, lines: result.lines }]);
       if (result.action?.type === "navigate") {
-        window.setTimeout(() => go(result.action!.type === "navigate" ? result.action!.route : "/"), 450);
+        window.setTimeout(
+          () => go(result.action!.type === "navigate" ? result.action!.route : "/"),
+          450,
+        );
       }
     },
     [go],
@@ -153,7 +164,9 @@ export function Terminal({ onOpenPalette }: { onOpenPalette?: () => void }) {
           <span className="h-2.5 w-2.5 rounded-full bg-primary/70" />
           <span className="h-2.5 w-2.5 rounded-full bg-terminal-success/70" />
         </span>
-        <p className="ml-2 truncate font-mono text-xs text-muted-foreground">{prompt} — portfolio-sh</p>
+        <p className="ml-2 truncate font-mono text-xs text-muted-foreground">
+          {prompt} — portfolio-sh
+        </p>
       </div>
 
       <div

@@ -69,7 +69,9 @@ export function SkillCard({ category }: { category: SkillCategory }) {
 
       {activeSkill && (
         <div className="animate-rise mt-4 rounded-lg border border-border bg-surface p-4">
-          <p className="font-mono text-xs text-primary">$ grep -r &quot;{activeSkill.name}&quot; ~/portfolio</p>
+          <p className="font-mono text-xs text-primary">
+            $ grep -r &quot;{activeSkill.name}&quot; ~/portfolio
+          </p>
           <div className="mt-3">
             <Usage skill={activeSkill} />
           </div>

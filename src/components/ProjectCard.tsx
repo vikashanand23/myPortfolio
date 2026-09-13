@@ -18,7 +18,9 @@ export function ProjectCard({ project }: { project: Project }) {
           <span className="prompt-label whitespace-nowrap">{project.status}</span>
         </div>
         <p className="mt-1 text-sm text-primary">{project.tagline}</p>
-        <p className="mt-3 flex-1 text-sm leading-relaxed text-muted-foreground">{project.description}</p>
+        <p className="mt-3 flex-1 text-sm leading-relaxed text-muted-foreground">
+          {project.description}
+        </p>
 
         <ul className="mt-4 flex flex-wrap gap-1.5">
           {project.technologies.map((tech) => (
@@ -37,7 +39,10 @@ export function ProjectCard({ project }: { project: Project }) {
           className="mt-5 inline-flex items-center gap-1.5 font-mono text-sm text-primary underline-offset-4 hover:underline"
         >
           cat {project.id}.md
-          <ArrowUpRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5" aria-hidden />
+          <ArrowUpRight
+            className="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5"
+            aria-hidden
+          />
         </Link>
       </div>
     </article>

@@ -9,10 +9,14 @@ export const Route = createFileRoute("/timeline")({
       { title: "vikash@portfolio:~$timeline" },
       {
         name: "description",
-        content: "A chronological view of Vikash Anand's career, education, projects and technical milestones.",
+        content:
+          "A chronological view of Vikash Anand's career, education, projects and technical milestones.",
       },
       { property: "og:title", content: "Timeline — Vikash Anand" },
-      { property: "og:description", content: "Career, education, projects and technical milestones." },
+      {
+        property: "og:description",
+        content: "Career, education, projects and technical milestones.",
+      },
       { property: "og:type", content: "website" },
       { property: "og:url", content: "/timeline" },
     ],

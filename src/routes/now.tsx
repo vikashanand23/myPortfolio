@@ -9,10 +9,14 @@ export const Route = createFileRoute("/now")({
       { title: "vikash@portfolio:~$now" },
       {
         name: "description",
-        content: "What Vikash Anand is working on, learning, building and exploring right now, plus current goals.",
+        content:
+          "What Vikash Anand is working on, learning, building and exploring right now, plus current goals.",
       },
       { property: "og:title", content: "Now — Vikash Anand" },
-      { property: "og:description", content: "Current work, learning, builds, explorations and goals." },
+      {
+        property: "og:description",
+        content: "Current work, learning, builds, explorations and goals.",
+      },
       { property: "og:type", content: "website" },
       { property: "og:url", content: "/now" },
     ],

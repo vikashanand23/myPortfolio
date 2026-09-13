@@ -236,7 +236,10 @@ function findOutput(term: string): TerminalLine[] {
     ];
   }
 
-  const lines: TerminalLine[] = [text(`Found ${results.length} match${results.length === 1 ? "" : "es"}`), spacer()];
+  const lines: TerminalLine[] = [
+    text(`Found ${results.length} match${results.length === 1 ? "" : "es"}`),
+    spacer(),
+  ];
   let currentCategory = "";
   for (const result of results) {
     if (result.category !== currentCategory) {
@@ -282,7 +285,9 @@ function sudoOutput(rest: string): TerminalLine[] {
   if (arg.startsWith("rm")) {
     return [{ kind: "error", text: "sudo: nice try. This filesystem is read-only." }];
   }
-  return [text(`${personal.terminalUser} is not in the sudoers file. This incident has been logged.`)];
+  return [
+    text(`${personal.terminalUser} is not in the sudoers file. This incident has been logged.`),
+  ];
 }
 
 const naturalLanguage = (input: string) =>
@@ -321,14 +326,21 @@ export function runCommand(rawInput: string): CommandResult {
     case "project":
       return args
         ? { lines: projectDetail(args) }
-        : { lines: [{ kind: "error", text: "usage: project <name>" }, text(`e.g. project ${projects[0]?.id ?? "grimmspot"}`, true)] };
+        : {
+            lines: [
+              { kind: "error", text: "usage: project <name>" },
+              text(`e.g. project ${projects[0]?.id ?? "grimmspot"}`, true),
+            ],
+          };
     case "skills":
       return { lines: skillsOutput() };
     case "education":
       return {
         lines: listOutput(
           education.map((e) =>
-            isPlaceholder(e.institution) ? PLACEHOLDER : `${e.qualification}, ${e.institution} (${e.start}–${e.end})`,
+            isPlaceholder(e.institution)
+              ? PLACEHOLDER
+              : `${e.qualification}, ${e.institution} (${e.start}–${e.end})`,
           ),
           "EDUCATION",
           "/profile",
@@ -337,7 +349,9 @@ export function runCommand(rawInput: string): CommandResult {
     case "certifications":
       return {
         lines: listOutput(
-          certifications.map((c) => (isPlaceholder(c.name) ? PLACEHOLDER : `${c.name} — ${c.issuer}`)),
+          certifications.map((c) =>
+            isPlaceholder(c.name) ? PLACEHOLDER : `${c.name} — ${c.issuer}`,
+          ),
           "CERTIFICATIONS",
           "/profile",
         ),
@@ -345,7 +359,9 @@ export function runCommand(rawInput: string): CommandResult {
     case "achievements":
       return {
         lines: listOutput(
-          achievements.map((a) => (isPlaceholder(a.title) ? PLACEHOLDER : `${a.title} — ${a.description}`)),
+          achievements.map((a) =>
+            isPlaceholder(a.title) ? PLACEHOLDER : `${a.title} — ${a.description}`,
+          ),
           "ACHIEVEMENTS",
           "/profile",
         ),
@@ -392,17 +408,28 @@ export function runCommand(rawInput: string): CommandResult {
       return {
         lines: [
           text("Fetching resume..."),
-          { kind: "external", text: `Download ${personal.resumeFileName}`, url: personal.resumePath },
+          {
+            kind: "external",
+            text: `Download ${personal.resumeFileName}`,
+            url: personal.resumePath,
+          },
         ],
       };
     }
     case "location":
-      return { lines: [kv("Location", value(personal.location)), kv("Hometown", value(personal.hometown))] };
+      return {
+        lines: [kv("Location", value(personal.location)), kv("Hometown", value(personal.hometown))],
+      };
     case "github":
     case "linkedin": {
       const social = socials.find((s) => s.id === cmd);
       if (!social || isPlaceholder(social.url)) {
-        return { lines: [text(`${cmd} link not configured yet.`), text("Add it in src/data/portfolio.ts.", true)] };
+        return {
+          lines: [
+            text(`${cmd} link not configured yet.`),
+            text("Add it in src/data/portfolio.ts.", true),
+          ],
+        };
       }
       return { lines: [{ kind: "external", text: social.url, url: social.url }] };
     }
@@ -436,7 +463,13 @@ export function runCommand(rawInput: string): CommandResult {
       if (naturalLanguage(input)) {
         const results = searchPortfolio(input);
         if (results.length) {
-          return { lines: [text(`Interpreting as a search for "${input}"`, true), spacer(), ...findOutput(input)] };
+          return {
+            lines: [
+              text(`Interpreting as a search for "${input}"`, true),
+              spacer(),
+              ...findOutput(input),
+            ],
+          };
         }
       }
       return {

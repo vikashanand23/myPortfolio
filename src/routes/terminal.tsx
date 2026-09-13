@@ -14,7 +14,10 @@ export const Route = createFileRoute("/terminal")({
           "An interactive Linux-style terminal for exploring Vikash Anand's portfolio. Type help, find kubernetes, or project grimmspot.",
       },
       { property: "og:title", content: "Terminal — Vikash Anand" },
-      { property: "og:description", content: "Explore the portfolio with commands: help, whoami, projects, find." },
+      {
+        property: "og:description",
+        content: "Explore the portfolio with commands: help, whoami, projects, find.",
+      },
       { property: "og:type", content: "website" },
       { property: "og:url", content: "/terminal" },
     ],

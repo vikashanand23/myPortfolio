@@ -134,7 +134,14 @@ const buildIndex = (): Doc[] => {
         category: "Skill",
         snippet: `${category.name} — ${category.description}`,
         route: "/skills",
-        keywords: clean([skill.name, category.name, category.description, "skill", "technology", "know"]),
+        keywords: clean([
+          skill.name,
+          category.name,
+          category.description,
+          "skill",
+          "technology",
+          "know",
+        ]),
         weight: 1,
       });
     }
@@ -145,7 +152,8 @@ const buildIndex = (): Doc[] => {
       id: `education-${item.id}`,
       title: isPlaceholder(item.institution) ? "Education" : item.institution,
       category: "Education",
-      snippet: clean([item.qualification, item.field]).join(" · ") || "Education details coming soon.",
+      snippet:
+        clean([item.qualification, item.field]).join(" · ") || "Education details coming soon.",
       route: "/profile",
       keywords: clean([
         item.institution,
@@ -168,7 +176,14 @@ const buildIndex = (): Doc[] => {
       category: "Hobby",
       snippet: hobby.description,
       route: "/hobbies",
-      keywords: clean([hobby.title, hobby.tagline, hobby.description, hobby.story, "hobby", "interests"]),
+      keywords: clean([
+        hobby.title,
+        hobby.tagline,
+        hobby.description,
+        hobby.story,
+        "hobby",
+        "interests",
+      ]),
       weight: 0.9,
     });
   }
@@ -192,7 +207,14 @@ const buildIndex = (): Doc[] => {
       category: "Timeline",
       snippet: isPlaceholder(entry.description) ? "Timeline entry coming soon." : entry.description,
       route: entry.route ?? "/timeline",
-      keywords: clean([entry.title, entry.description, entry.category, entry.date, "timeline", "milestone"]),
+      keywords: clean([
+        entry.title,
+        entry.description,
+        entry.category,
+        entry.date,
+        "timeline",
+        "milestone",
+      ]),
       weight: 0.8,
     });
   }
@@ -241,10 +263,63 @@ const index = buildIndex();
 
 /** Words that carry no signal in a natural-language query. */
 const STOP_WORDS = new Set([
-  "a","an","the","what","whats","what's","who","whos","who's","does","do","did","is","are","was","were",
-  "vikash","anand","he","his","him","about","show","me","tell","give","list","of","on","in","with","for",
-  "and","or","to","have","has","any","your","you","know","knows","worked","work","using","use","used",
-  "please","can","could","i","see","find","open","search","experience?","projects?",
+  "a",
+  "an",
+  "the",
+  "what",
+  "whats",
+  "what's",
+  "who",
+  "whos",
+  "who's",
+  "does",
+  "do",
+  "did",
+  "is",
+  "are",
+  "was",
+  "were",
+  "vikash",
+  "anand",
+  "he",
+  "his",
+  "him",
+  "about",
+  "show",
+  "me",
+  "tell",
+  "give",
+  "list",
+  "of",
+  "on",
+  "in",
+  "with",
+  "for",
+  "and",
+  "or",
+  "to",
+  "have",
+  "has",
+  "any",
+  "your",
+  "you",
+  "know",
+  "knows",
+  "worked",
+  "work",
+  "using",
+  "use",
+  "used",
+  "please",
+  "can",
+  "could",
+  "i",
+  "see",
+  "find",
+  "open",
+  "search",
+  "experience?",
+  "projects?",
 ]);
 
 const tokenize = (input: string) =>
@@ -292,7 +367,11 @@ export function searchPortfolio(rawQuery: string, limit = 12): SearchResult[] {
     }
 
     if (score > 0 && hintedCategories.size && hintedCategories.has(doc.category)) score += 5;
-    if (score > 0 && !searchTerms.some((t) => !STOP_WORDS.has(t)) && !hintedCategories.has(doc.category))
+    if (
+      score > 0 &&
+      !searchTerms.some((t) => !STOP_WORDS.has(t)) &&
+      !hintedCategories.has(doc.category)
+    )
       score -= 2;
 
     return { doc, score: score * doc.weight };

@@ -31,7 +31,15 @@ export const Route = createFileRoute("/profile")({
   component: ProfilePage,
 });
 
-function Section({ command, title, children }: { command: string; title: string; children: React.ReactNode }) {
+function Section({
+  command,
+  title,
+  children,
+}: {
+  command: string;
+  title: string;
+  children: React.ReactNode;
+}) {
   const id = title.toLowerCase().replace(/\s+/g, "-");
   return (
     <section className="mt-14" aria-labelledby={id}>
@@ -49,10 +57,16 @@ function ProfilePage() {
 
   return (
     <SiteLayout>
-      <PageHeader command="$ cat ~/profile/README.md" title="Profile" description={personal.about} />
+      <PageHeader
+        command="$ cat ~/profile/README.md"
+        title="Profile"
+        description={personal.about}
+      />
 
       <Section command="$ cat summary.txt" title="Professional Summary">
-        <p className="max-w-3xl text-base leading-relaxed text-muted-foreground">{personal.professionalSummary}</p>
+        <p className="max-w-3xl text-base leading-relaxed text-muted-foreground">
+          {personal.professionalSummary}
+        </p>
       </Section>
 
       <Section command="$ cat experience.json" title="Experience">
@@ -144,12 +158,16 @@ function ProfilePage() {
                 Download Resume
               </button>
               <p className="text-sm text-muted-foreground">
-                Resume file not added yet — set <code className="font-mono text-xs">personal.resumePath</code> in{" "}
+                Resume file not added yet — set{" "}
+                <code className="font-mono text-xs">personal.resumePath</code> in{" "}
                 <code className="font-mono text-xs">src/data/portfolio.ts</code>.
               </p>
             </>
           )}
-          <Link to="/contact" className="font-mono text-sm text-primary underline-offset-4 hover:underline">
+          <Link
+            to="/contact"
+            className="font-mono text-sm text-primary underline-offset-4 hover:underline"
+          >
             or get in touch →
           </Link>
         </div>

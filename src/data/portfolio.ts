@@ -106,13 +106,7 @@ export type TimelineEntry = {
   date: string;
   sortKey: string;
   title: string;
-  category:
-    | "Career"
-    | "Education"
-    | "Project"
-    | "Technical"
-    | "Personal"
-    | "Achievement";
+  category: "Career" | "Education" | "Project" | "Technical" | "Personal" | "Achievement";
   description: string;
   route?: string;
 };
@@ -215,15 +209,15 @@ export const experience: Experience[] = [
     summary:
       "Cloud DevOps Engineer focused on designing, automating and operating AWS cloud infrastructure, with hands-on experience in Kubernetes, Terraform, CI/CD, monitoring and application reliability. Builds scalable infrastructure and automation solutions that improve deployment efficiency, system resilience and operational performance.",
 
-    responsibilities: [ 
+    responsibilities: [
       "Delivered cloud-native deployment solutions for 20+ enterprise customers, developing and deploying applications across AWS environments while collaborating with cross-functional teams to ensure reliable and scalable releases.",
       "Migrated traditionally deployed services to containerized Kubernetes workloads, implementing automated deployment, failover, scaling and multi-layer security across staging and production environments.",
-      "Transformed 100+ static CloudFormation scripts into modular Terraform code, reducing infrastructure provisioning time by 60% and improving deployment consistency.", 
-      "Designed an AI-based predictive scaling architecture to dynamically optimize infrastructure capacity based on application usage patterns, with a projected ~15% reduction in infrastructure costs during peak workloads.", 
-      "Developed and deployed feature enhancements for multiple customers in production environments, coordinating application changes, configuration updates, testing and release activities to improve deployment efficiency.", 
-      "Automated and optimized system health monitoring and AWS CloudWatch configurations, implementing proactive alerting and infrastructure capacity improvements across compute, disk and memory resources.", 
-      "Streamlined Terraform-based infrastructure deployments, reducing manual provisioning and configuration activities by 40% and improving consistency across environments.", 
-      "Worked extensively with AWS, Kubernetes, Terraform, CloudWatch and containerized application environments to build, deploy, monitor and maintain scalable cloud infrastructure.", 
+      "Transformed 100+ static CloudFormation scripts into modular Terraform code, reducing infrastructure provisioning time by 60% and improving deployment consistency.",
+      "Designed an AI-based predictive scaling architecture to dynamically optimize infrastructure capacity based on application usage patterns, with a projected ~15% reduction in infrastructure costs during peak workloads.",
+      "Developed and deployed feature enhancements for multiple customers in production environments, coordinating application changes, configuration updates, testing and release activities to improve deployment efficiency.",
+      "Automated and optimized system health monitoring and AWS CloudWatch configurations, implementing proactive alerting and infrastructure capacity improvements across compute, disk and memory resources.",
+      "Streamlined Terraform-based infrastructure deployments, reducing manual provisioning and configuration activities by 40% and improving consistency across environments.",
+      "Worked extensively with AWS, Kubernetes, Terraform, CloudWatch and containerized application environments to build, deploy, monitor and maintain scalable cloud infrastructure.",
     ],
 
     achievements: [
@@ -247,56 +241,57 @@ export const experience: Experience[] = [
     ],
   },
 
-  { 
-    id: "avis-cloud-coe", 
-    company: "Avis Budget Group", 
-    role: "Cloud COE Engineer / DevOps Engineer", 
-    type: "Full-time", 
-    location: "Bengaluru, Karnataka, India", 
-    start: "Oct 2023", 
-    end: "Feb 2025", 
-    
-    summary: "Cloud DevOps engineering role focused on AWS infrastructure automation, Kubernetes, multi-region deployments, Infrastructure as Code, CI/CD and service mesh technologies across Fleet Data Platform and Customer Data Platform environments.", 
-    
-    responsibilities: [ 
-      "Engineered and automated AWS infrastructure workflows for Fleet Data Platform and Customer Data Platform environments.", 
-      "Automated service lifecycle management through JumpBox-based workflows and implemented automatic secret key rotation for cloud services.", 
-      "Transformed 100+ static CloudFormation scripts into modular Terraform infrastructure, improving scalability, maintainability and deployment consistency.", 
-      "Designed and maintained Jenkins pipelines integrating Terraform and CloudFormation to automate AWS infrastructure operations and deployments.", 
-      "Created automated deployment scripts for multi-region application environments, significantly reducing environment setup time.", 
-      "Deployed and maintained Kubernetes clusters across two AWS regions to provide service redundancy and improve application resilience.", 
-      "Implemented service mesh access-control, failover and outlier-detection policies to improve reliability across distributed environments.", 
-      "Managed cross-region service mesh traffic and migrated ingress routing from Istio to Gloo Mesh Route Tables to optimize traffic flow.", 
-    ], 
-    
-    achievements: [ 
-      "Eliminated approximately 15 hours per week of manual coordination through service lifecycle and secret rotation automation.", 
-      "Transformed 100+ static CloudFormation scripts into modular Terraform code, reducing infrastructure provisioning time by approximately 60%.", 
-      "Automated AWS infrastructure operations through Jenkins pipelines, reducing execution time by approximately 70%.", 
-      "Achieved approximately 90% reduction in multi-region environment setup time through automated deployment scripts.", 
-      "Improved service redundancy by deploying Kubernetes clusters across two AWS regions and reduced downtime risk by approximately 40%.", 
-      "Improved system reliability by approximately 35% through service mesh access control, failover and outlier-detection policies.", 
-      "Optimized cross-region traffic management by migrating ingress routing from Istio to Gloo Mesh Route Tables.", 
-    ], 
-    
-    technologies: [ 
-      "AWS", 
-      "Kubernetes", 
-      "EKS", 
-      "Docker", 
-      "Terraform", 
-      "CloudFormation", 
-      "Jenkins", 
-      "Istio", 
-      "Gloo Mesh", 
-      "Helm", 
-      "Python", 
-      "Shell", 
-      "Linux", 
-      "S3", 
-      "IAM", 
-      "Secrets Manager", 
-    ], 
+  {
+    id: "avis-cloud-coe",
+    company: "Avis Budget Group",
+    role: "Cloud COE Engineer / DevOps Engineer",
+    type: "Full-time",
+    location: "Bengaluru, Karnataka, India",
+    start: "Oct 2023",
+    end: "Feb 2025",
+
+    summary:
+      "Cloud DevOps engineering role focused on AWS infrastructure automation, Kubernetes, multi-region deployments, Infrastructure as Code, CI/CD and service mesh technologies across Fleet Data Platform and Customer Data Platform environments.",
+
+    responsibilities: [
+      "Engineered and automated AWS infrastructure workflows for Fleet Data Platform and Customer Data Platform environments.",
+      "Automated service lifecycle management through JumpBox-based workflows and implemented automatic secret key rotation for cloud services.",
+      "Transformed 100+ static CloudFormation scripts into modular Terraform infrastructure, improving scalability, maintainability and deployment consistency.",
+      "Designed and maintained Jenkins pipelines integrating Terraform and CloudFormation to automate AWS infrastructure operations and deployments.",
+      "Created automated deployment scripts for multi-region application environments, significantly reducing environment setup time.",
+      "Deployed and maintained Kubernetes clusters across two AWS regions to provide service redundancy and improve application resilience.",
+      "Implemented service mesh access-control, failover and outlier-detection policies to improve reliability across distributed environments.",
+      "Managed cross-region service mesh traffic and migrated ingress routing from Istio to Gloo Mesh Route Tables to optimize traffic flow.",
+    ],
+
+    achievements: [
+      "Eliminated approximately 15 hours per week of manual coordination through service lifecycle and secret rotation automation.",
+      "Transformed 100+ static CloudFormation scripts into modular Terraform code, reducing infrastructure provisioning time by approximately 60%.",
+      "Automated AWS infrastructure operations through Jenkins pipelines, reducing execution time by approximately 70%.",
+      "Achieved approximately 90% reduction in multi-region environment setup time through automated deployment scripts.",
+      "Improved service redundancy by deploying Kubernetes clusters across two AWS regions and reduced downtime risk by approximately 40%.",
+      "Improved system reliability by approximately 35% through service mesh access control, failover and outlier-detection policies.",
+      "Optimized cross-region traffic management by migrating ingress routing from Istio to Gloo Mesh Route Tables.",
+    ],
+
+    technologies: [
+      "AWS",
+      "Kubernetes",
+      "EKS",
+      "Docker",
+      "Terraform",
+      "CloudFormation",
+      "Jenkins",
+      "Istio",
+      "Gloo Mesh",
+      "Helm",
+      "Python",
+      "Shell",
+      "Linux",
+      "S3",
+      "IAM",
+      "Secrets Manager",
+    ],
   },
 
   {
@@ -324,11 +319,7 @@ export const experience: Experience[] = [
       "Reduced reporting errors by approximately 30%.",
     ],
 
-    technologies: [
-      "SQL",
-      "Tableau",
-      "Data Analysis",
-    ],
+    technologies: ["SQL", "Tableau", "Data Analysis"],
   },
 
   {
@@ -397,11 +388,9 @@ export const achievements: Achievement[] = [
   {
     id: "achievement-python-sql",
     title: "HackerRank Gold Badges",
-    description:
-      "Earned Gold Badges in Python and SQL on HackerRank.",
+    description: "Earned Gold Badges in Python and SQL on HackerRank.",
     date: "Professional Achievement",
   },
-
 ];
 
 export const skillCategories: SkillCategory[] = [
@@ -412,11 +401,7 @@ export const skillCategories: SkillCategory[] = [
     skills: [
       {
         name: "AWS",
-        experienceIds: [
-          "thinkanalytics-cloud-devops",
-          "avis-cloud-coe",
-          "avis-multi-region",
-        ],
+        experienceIds: ["thinkanalytics-cloud-devops", "avis-cloud-coe", "avis-multi-region"],
       },
       {
         name: "S3",
@@ -459,19 +444,11 @@ export const skillCategories: SkillCategory[] = [
     skills: [
       {
         name: "Docker",
-        experienceIds: [
-          "thinkanalytics-cloud-devops",
-          "avis-cloud-coe",
-          "avis-multi-region",
-        ],
+        experienceIds: ["thinkanalytics-cloud-devops", "avis-cloud-coe", "avis-multi-region"],
       },
       {
         name: "Kubernetes",
-        experienceIds: [
-          "thinkanalytics-cloud-devops",
-          "avis-cloud-coe",
-          "avis-multi-region",
-        ],
+        experienceIds: ["thinkanalytics-cloud-devops", "avis-cloud-coe", "avis-multi-region"],
       },
       {
         name: "EKS",
@@ -487,10 +464,7 @@ export const skillCategories: SkillCategory[] = [
       },
       {
         name: "kubectl",
-        experienceIds: [
-          "thinkanalytics-cloud-devops",
-          "avis-multi-region",
-        ],
+        experienceIds: ["thinkanalytics-cloud-devops", "avis-multi-region"],
       },
       {
         name: "Helm",
@@ -506,11 +480,7 @@ export const skillCategories: SkillCategory[] = [
     skills: [
       {
         name: "Terraform",
-        experienceIds: [
-          "thinkanalytics-cloud-devops",
-          "avis-cloud-coe",
-          "avis-multi-region",
-        ],
+        experienceIds: ["thinkanalytics-cloud-devops", "avis-cloud-coe", "avis-multi-region"],
         projectIds: ["book-info"],
       },
       {
@@ -527,11 +497,7 @@ export const skillCategories: SkillCategory[] = [
     skills: [
       {
         name: "Jenkins",
-        experienceIds: [
-          "thinkanalytics-cloud-devops",
-          "avis-cloud-coe",
-          "avis-multi-region",
-        ],
+        experienceIds: ["thinkanalytics-cloud-devops", "avis-cloud-coe", "avis-multi-region"],
       },
       {
         name: "Concourse",
@@ -543,11 +509,7 @@ export const skillCategories: SkillCategory[] = [
       },
       {
         name: "Git",
-        experienceIds: [
-          "thinkanalytics-cloud-devops",
-          "avis-cloud-coe",
-          "avis-multi-region",
-        ],
+        experienceIds: ["thinkanalytics-cloud-devops", "avis-cloud-coe", "avis-multi-region"],
       },
       {
         name: "GitHub",
@@ -645,10 +607,7 @@ export const skillCategories: SkillCategory[] = [
     skills: [
       {
         name: "Python",
-        experienceIds: [
-          "thinkanalytics-cloud-devops",
-          "cognizant-data-warehousing",
-        ],
+        experienceIds: ["thinkanalytics-cloud-devops", "cognizant-data-warehousing"],
         projectIds: ["movie-review-model"],
       },
       {
@@ -728,19 +687,11 @@ export const skillCategories: SkillCategory[] = [
     skills: [
       {
         name: "Linux",
-        experienceIds: [
-          "thinkanalytics-cloud-devops",
-          "avis-cloud-coe",
-          "avis-multi-region",
-        ],
+        experienceIds: ["thinkanalytics-cloud-devops", "avis-cloud-coe", "avis-multi-region"],
       },
       {
         name: "Git",
-        experienceIds: [
-          "thinkanalytics-cloud-devops",
-          "avis-cloud-coe",
-          "avis-multi-region",
-        ],
+        experienceIds: ["thinkanalytics-cloud-devops", "avis-cloud-coe", "avis-multi-region"],
       },
     ],
   },
@@ -775,14 +726,7 @@ export const projects: Project[] = [
       "Designed the infrastructure with secure and repeatable deployment practices.",
     ],
 
-    technologies: [
-      "AWS",
-      "Terraform",
-      "VPC",
-      "EC2",
-      "Security Groups",
-      "Istio",
-    ],
+    technologies: ["AWS", "Terraform", "VPC", "EC2", "Security Groups", "Istio"],
 
     results: [
       "Created a repeatable AWS infrastructure deployment using Terraform.",
@@ -998,8 +942,7 @@ export const hobbies: Hobby[] = [
     id: "Sports",
     title: "Playing Sports",
     tagline: "Staying active and competitive.",
-    description:
-      "Playing various sports to stay fit and competitive.",
+    description: "Playing various sports to stay fit and competitive.",
     story: PLACEHOLDER,
     status: "Currently playing",
     since: "2000",
@@ -1016,8 +959,7 @@ export const hobbies: Hobby[] = [
     id: "RRiddles",
     title: "Solving Riddles and mathematical sums",
     tagline: "Sharpening my mind with logic puzzles.",
-    description:
-      "Solving riddles and mathematical sums to keep my mind sharp.",
+    description: "Solving riddles and mathematical sums to keep my mind sharp.",
     story: PLACEHOLDER,
     status: "Currently solving",
     since: "2005",
@@ -1071,8 +1013,7 @@ export const timeline: TimelineEntry[] = [
     sortKey: "2022-08",
     title: "Data Warehousing Intern, Cognizant",
     category: "Career",
-    description:
-      "Worked with PySpark, Hive, Hadoop, Informatica, Python, SQL and shell scripting.",
+    description: "Worked with PySpark, Hive, Hadoop, Informatica, Python, SQL and shell scripting.",
     route: "/profile",
   },
 
@@ -1082,8 +1023,7 @@ export const timeline: TimelineEntry[] = [
     sortKey: "2022-07",
     title: "Bachelor of Technology — Heritage Institute of Technology",
     category: "Education",
-    description:
-      "Completed Bachelor of Technology with an 8.0 CGPA.",
+    description: "Completed Bachelor of Technology with an 8.0 CGPA.",
     route: "/profile",
   },
 
@@ -1093,19 +1033,17 @@ export const timeline: TimelineEntry[] = [
     sortKey: "2017-07",
     title: "class12th - Krishna Public School, Patna",
     category: "Education",
-    description:
-      "Completed senior secondary education with 70% marks.",
+    description: "Completed senior secondary education with 70% marks.",
     route: "/profile",
   },
 
-    {
+  {
     id: "t-education-Higher-Secondary-School",
     date: "Jul 2015",
     sortKey: "2015-07",
     title: "class10th - Keshave Saraswati Vidya Mandir, Patna",
     category: "Education",
-    description:
-      "Completed primary education with 98 % marks.",
+    description: "Completed primary education with 98 % marks.",
     route: "/profile",
   },
 ];
@@ -1137,9 +1075,7 @@ export const now: { updated: string; sections: NowSection[] } = {
     {
       id: "building",
       title: "Currently Building",
-      items: [
-        "A Dynamic Personal Project using AI integration and scalable infrastructure",
-      ],
+      items: ["A Dynamic Personal Project using AI integration and scalable infrastructure"],
     },
 
     {

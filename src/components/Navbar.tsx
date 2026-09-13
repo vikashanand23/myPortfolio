@@ -9,8 +9,15 @@ export function Navbar({ onOpenPalette }: { onOpenPalette: () => void }) {
 
   return (
     <header className="sticky top-0 z-40 w-full border-b border-border/70 bg-background/85 backdrop-blur-md">
-      <nav aria-label="Main" className="mx-auto flex h-16 w-full max-w-6xl items-center gap-4 px-4 sm:px-6">
-        <Link to="/" className="group flex min-w-0 items-center gap-3" onClick={() => setOpen(false)}>
+      <nav
+        aria-label="Main"
+        className="mx-auto flex h-16 w-full max-w-6xl items-center gap-4 px-4 sm:px-6"
+      >
+        <Link
+          to="/"
+          className="group flex min-w-0 items-center gap-3"
+          onClick={() => setOpen(false)}
+        >
           <span
             aria-hidden
             className="flex h-8 w-8 items-center justify-center rounded-md border border-border bg-surface-raised font-mono text-xs text-primary"

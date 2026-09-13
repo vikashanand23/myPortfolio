@@ -56,7 +56,10 @@ export function Footer() {
               ),
             )}
             <li>
-              <Link to="/terminal" className="text-muted-foreground transition-colors hover:text-primary">
+              <Link
+                to="/terminal"
+                className="text-muted-foreground transition-colors hover:text-primary"
+              >
                 Terminal
               </Link>
             </li>

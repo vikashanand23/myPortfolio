@@ -51,7 +51,9 @@ export function SafeImage({
         )}
       >
         <ImageIcon className="h-5 w-5" aria-hidden />
-        <span className="px-4 text-center font-mono text-[11px]">{src || "image path not set"}</span>
+        <span className="px-4 text-center font-mono text-[11px]">
+          {src || "image path not set"}
+        </span>
       </div>
     );
   }
