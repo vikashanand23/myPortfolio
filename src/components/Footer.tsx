@@ -39,6 +39,7 @@ export function Footer() {
               isPlaceholder(social.url) ? (
                 <li key={social.id} className="text-muted-foreground">
                   {social.label} <span className="font-mono text-xs">(not configured)</span>
+                  {/* <img src={social.icon} alt={social.label} width="30" height="20" loading="lazy" /> */}
                 </li>
               ) : (
                 <li key={social.id}>
@@ -48,6 +49,7 @@ export function Footer() {
                     rel="noreferrer noopener"
                     className="text-muted-foreground underline-offset-4 transition-colors hover:text-primary hover:underline"
                   >
+                    {/* <img src={social.icon} alt={social.label} width="15" height="10" loading="lazy" /> */}
                     {social.label}
                   </a>
                 </li>

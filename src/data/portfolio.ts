@@ -4,12 +4,12 @@
  * Everything the site displays comes from this file.
  * Replace any `PLACEHOLDER` string with real information — no component edits needed.
  */
-
 export const PLACEHOLDER = "[PLACEHOLDER — ADD INFORMATION]";
 
 export type SocialLink = {
   id: string;
   label: string;
+  icon: string;
   url: string;
   handle: string;
 };
@@ -133,7 +133,7 @@ export const personal = {
     "I explore problems that catch my eye, break them down, automate what I can, and build reliable solutions across cloud and infrastructure.",
 
   about:
-    "I work on cloud infrastructure and the problems that come with running applications reliably at scale. My work revolves around AWS, Kubernetes, Terraform and CI/CD, with a focus on making deployments more automated, infrastructure more consistent, and systems easier to operate. I enjoy taking a problem that involves too much manual work or too many moving parts, breaking it down, and turning it into a reliable, repeatable solution.",
+    "I bridge the gap between application code and cloud infrastructure. Specializing in container platform design and infrastructure automation, I help engineering teams scale on AWS without sacrificing reliability or velocity. Interested in resilience engineering, internal developer platforms, and eliminating operational toil.",
 
   professionalSummary:
     "Cloud DevOps Engineer with 4+ years of experience designing, deploying and supporting scalable cloud infrastructure on AWS. Experienced in Kubernetes container orchestration, CI/CD automation using Jenkins, Infrastructure as Code with Terraform, and service mesh technologies such as Istio and Gloo Mesh. Strong background in Linux-based environments, multi-region deployments, cloud monitoring, production support and operational automation.",
@@ -165,26 +165,31 @@ export const socials: SocialLink[] = [
   {
     id: "email",
     label: "Email",
+    // { rel: "icon", href: "", type: "image/x-icon" },
+    icon: "/gmail.png",
     url: "https://mail.google.com/mail/?view=cm&fs=1&to=vikashanand04@gmail.com",
     handle: "vikashanand04@gmail.com",
   },
   {
     id: "github",
     label: "GitHub",
+    icon: "/github.png",
     url: "https://github.com/vikashanand23",
-    handle: "vikashanand",
+    handle: "Open vikash's github",
   },
   {
     id: "linkedin",
     label: "LinkedIn",
+    icon: "/linkedin.png",
     url: "https://www.linkedin.com/in/vikash-a-040760107/",
-    handle: "Linkedin",
+    handle: "Check out vikash's linkedin",
   },
   {
-    id: "x",
-    label: "X / Twitter",
-    url: PLACEHOLDER,
-    handle: PLACEHOLDER,
+    id: "instagram",
+    label: "instagram",
+    icon: "/instagram.png",
+    url: "https://www.instagram.com/afictionalwolf/",
+    handle: "Visit vikash on Instagram",
   },
 ];
 
@@ -396,27 +401,7 @@ export const achievements: Achievement[] = [
       "Earned Gold Badges in Python and SQL on HackerRank.",
     date: "Professional Achievement",
   },
-  {
-    id: "achievement-multi-region",
-    title: "Multi-Region Kubernetes Deployment",
-    description:
-      "Rolled out and maintained Kubernetes clusters across two AWS regions with service mesh traffic management, failover and outlier detection.",
-    date: "2023–2025",
-  },
-  {
-    id: "achievement-terraform",
-    title: "Infrastructure Automation",
-    description:
-      "Transformed 100+ static CloudFormation scripts into modular Terraform code and automated infrastructure workflows through Jenkins.",
-    date: "2023–2025",
-  },
-  {
-    id: "achievement-production-support",
-    title: "Enterprise Cloud Production Support",
-    description:
-      "Provided production cloud deployment and maintenance for 20+ enterprise customers while managing AWS services, CloudWatch alerts and infrastructure reliability.",
-    date: "2025–Present",
-  },
+
 ];
 
 export const skillCategories: SkillCategory[] = [
@@ -946,13 +931,13 @@ export const hobbies: Hobby[] = [
   {
     id: "motorcycling",
     title: "Motorcycling",
-    tagline: "Long roads, early starts.",
+    tagline: "Outrunning daylight and regrets.",
     description:
-      "Riding is how I clear my head — planning routes, maintaining the bike and covering distance.",
+      "Riding is how I clear my head. You inspect every bolt, check every line, and respect the machine—mostly because you know it won't hesitate to turn you into a statistical anomaly",
     story: PLACEHOLDER,
     status: "Active",
-    since: PLACEHOLDER,
-    milestones: [{ date: PLACEHOLDER, text: PLACEHOLDER }],
+    since: "2023",
+    milestones: [{ date: "05-2025", text: "bought guirrella 450" }],
     images: [
       {
         src: "/images/hobbies/motorcycling-1.jpg",
@@ -970,11 +955,11 @@ export const hobbies: Hobby[] = [
     title: "Travel / Exploration",
     tagline: "Places, people, detours.",
     description:
-      "Exploring new places, usually on two wheels and usually off the obvious route.",
+      "Off the map, off-beat, and driving straight into the punchline no one saw coming.",
     story: PLACEHOLDER,
     status: "Active",
-    since: PLACEHOLDER,
-    milestones: [{ date: PLACEHOLDER, text: PLACEHOLDER }],
+    since: "2018",
+    milestones: [{ date: "present", text: "earth is too big to have a milestone for travelling" }],
     images: [
       {
         src: "/images/hobbies/travel-1.jpg",
@@ -982,6 +967,10 @@ export const hobbies: Hobby[] = [
       },
       {
         src: "/images/hobbies/travel-2.jpg",
+        alt: "Travel photo placeholder",
+      },
+      {
+        src: "/images/hobbies/travel-3.jpg",
         alt: "Travel photo placeholder",
       },
     ],
@@ -1008,13 +997,13 @@ export const hobbies: Hobby[] = [
   {
     id: "building",
     title: "Technology / Building Projects",
-    tagline: "Side projects as a laboratory.",
+    tagline: "Utilising new technologies to build side projects and experiments.",
     description:
       "Building technology projects and experiments outside work to learn new tools, architectures and engineering practices.",
     story: PLACEHOLDER,
     status: "Currently building",
-    since: PLACEHOLDER,
-    milestones: [{ date: PLACEHOLDER, text: PLACEHOLDER }],
+    since: "2018",
+    milestones: [{ date: "2026", text: "personal curated portfolio" }],
     images: [
       {
         src: "/images/hobbies/building-1.jpg",
@@ -1037,7 +1026,7 @@ export const timeline: TimelineEntry[] = [
   },
 
   {
-    id: "t-avis",
+    id: "t-avis-budget-group",
     date: "Oct 2023",
     sortKey: "2023-10",
     title: "Cloud COE Engineer, Avis Budget Group",
@@ -1048,7 +1037,7 @@ export const timeline: TimelineEntry[] = [
   },
 
   {
-    id: "t-cognizant-analyst",
+    id: "t-cognizant",
     date: "Mar 2023",
     sortKey: "2023-03",
     title: "Programmer Analyst Trainee, Cognizant",
@@ -1061,7 +1050,7 @@ export const timeline: TimelineEntry[] = [
   {
     id: "t-cognizant-intern",
     date: "Mar 2022",
-    sortKey: "2022-03",
+    sortKey: "2022-08",
     title: "Data Warehousing Intern, Cognizant",
     category: "Career",
     description:
@@ -1070,7 +1059,7 @@ export const timeline: TimelineEntry[] = [
   },
 
   {
-    id: "t-education",
+    id: "t-education-btech",
     date: "Jul 2022",
     sortKey: "2022-07",
     title: "Bachelor of Technology — Heritage Institute of Technology",
@@ -1081,36 +1070,25 @@ export const timeline: TimelineEntry[] = [
   },
 
   {
-    id: "t-book-info",
-    date: "Project",
-    sortKey: "2021-01",
-    title: "Book Info Application",
-    category: "Project",
+    id: "t-education-Senior-Secondary-School",
+    date: "Jul 2017",
+    sortKey: "2017-07",
+    title: "class12th - Krishna Public School, Patna",
+    category: "Education",
     description:
-      "Provisioned AWS infrastructure with Terraform and implemented an Istio-based Book Info application.",
-    route: "/projects/book-info",
+      "Completed senior secondary education with 70% marks.",
+    route: "/profile",
   },
 
-  {
-    id: "t-movie-model",
-    date: "Project",
-    sortKey: "2021-02",
-    title: "Movie Review Model",
-    category: "Project",
+    {
+    id: "t-education-Higher-Secondary-School",
+    date: "Jul 2015",
+    sortKey: "2015-07",
+    title: "class10th - Keshave Saraswati Vidya Mandir, Patna",
+    category: "Education",
     description:
-      "Built an IMDb data pipeline and RandomForest model using Python, SQL, Pandas, NumPy, Tableau and Scikit-Learn.",
-    route: "/projects/movie-review-model",
-  },
-
-  {
-    id: "t-s3-replication",
-    date: "Project",
-    sortKey: "2021-03",
-    title: "Cross-Account S3 Replication",
-    category: "Project",
-    description:
-      "Engineered secure cross-account and cross-region S3 replication using IAM, Lambda and CloudWatch.",
-    route: "/projects/cross-account-s3",
+      "Completed primary education with 98 % marks.",
+    route: "/profile",
   },
 ];
 
@@ -1124,7 +1102,7 @@ export const now: { updated: string; sections: NowSection[] } = {
       items: [
         "Cloud DevOps engineering at ThinkAnalytics.",
         "AWS production support, Kubernetes, Terraform and cloud monitoring.",
-        "Improving operational reliability and reducing manual infrastructure work.",
+        "Onboarding and deploying new infrastructure for new customers, Improving operational reliability and reducing manual infrastructure work.",
       ],
     },
 
@@ -1134,7 +1112,7 @@ export const now: { updated: string; sections: NowSection[] } = {
       items: [
         "Advanced Kubernetes and cloud-native architecture.",
         "Infrastructure automation and CI/CD engineering.",
-        "GitHub Actions and modern DevOps delivery workflows.",
+        "AI Integrated DevOps workflows and MLOps.",
       ],
     },
 
@@ -1142,8 +1120,7 @@ export const now: { updated: string; sections: NowSection[] } = {
       id: "building",
       title: "Currently Building",
       items: [
-        "A professional DevOps portfolio with a terminal-style interface.",
-        "Hands-on CI/CD automation and cloud deployment workflows.",
+        "A Dynamic Personal Project using AI integration and scalable infrastructure",
       ],
     },
 
@@ -1165,7 +1142,7 @@ export const now: { updated: string; sections: NowSection[] } = {
         "Deepen AWS and Kubernetes expertise.",
         "Build production-quality DevOps and cloud projects.",
         "Strengthen CI/CD and infrastructure automation skills.",
-        "Prepare for high-level DevOps and cloud engineering interviews.",
+        "Become proficient in MLOps and AI-integrated DevOps workflows.",
       ],
     },
   ],

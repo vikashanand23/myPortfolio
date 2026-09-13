@@ -1,5 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { Download, TerminalSquare } from "lucide-react";
+import { Download, Loader2, TerminalSquare } from "lucide-react";
 import { useState } from "react";
 import { PageHeader, SiteLayout } from "@/components/SiteLayout";
 import { Value } from "@/components/Placeholders";
@@ -23,9 +23,38 @@ export const Route = createFileRoute("/contact")({
   component: ContactPage,
 });
 
+type FormStatus = "idle" | "submitting" | "success" | "error";
+
 function ContactPage() {
-  const [sent, setSent] = useState(false);
+  const [status, setStatus] = useState<FormStatus>("idle");
   const resumeReady = !isPlaceholder(personal.resumePath);
+
+  async function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
+    event.preventDefault();
+    setStatus("submitting");
+
+    const formData = new FormData(event.currentTarget);
+    // Insert your Web3Forms access key here:
+    formData.append("access_key", "7806d7fb-d215-4f3a-a066-94ef9e76ffaf");
+
+    try {
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        body: formData,
+      });
+
+      const data = await response.json();
+
+      if (data.success) {
+        setStatus("success");
+        (event.target as HTMLFormElement).reset();
+      } else {
+        setStatus("error");
+      }
+    } catch {
+      setStatus("error");
+    }
+  }
 
   return (
     <SiteLayout>
@@ -100,16 +129,10 @@ function ContactPage() {
             Send a message
           </h2>
           <p className="mt-1 text-sm text-muted-foreground">
-            This form is presentation only for now — no message is sent until an email service is connected.
+            Feel free to drop a message regarding work opportunities or general inquiries.
           </p>
 
-          <form
-            className="mt-5 space-y-4"
-            onSubmit={(event) => {
-              event.preventDefault();
-              setSent(true);
-            }}
-          >
+          <form className="mt-5 space-y-4" onSubmit={handleSubmit}>
             <div>
               <label htmlFor="name" className="prompt-label">
                 Name
@@ -139,7 +162,7 @@ function ContactPage() {
               </label>
               <textarea
                 id="body"
-                name="body"
+                name="message"
                 rows={5}
                 required
                 className="mt-1.5 w-full rounded-md border border-input bg-background px-3 py-2 text-sm outline-none focus:border-primary"
@@ -147,12 +170,24 @@ function ContactPage() {
             </div>
             <button
               type="submit"
-              className="inline-flex items-center rounded-md bg-primary px-4 py-2.5 text-sm font-medium text-primary-foreground"
+              disabled={status === "submitting"}
+              className="inline-flex items-center gap-2 rounded-md bg-primary px-4 py-2.5 text-sm font-medium text-primary-foreground disabled:opacity-50"
             >
-              Send message
+              {status === "submitting" && <Loader2 className="h-4 w-4 animate-spin" aria-hidden />}
+              {status === "submitting" ? "Sending..." : "Send message"}
             </button>
-            <p aria-live="polite" className="text-sm text-terminal-success">
-              {sent ? "Thanks — connect an email service to start delivering these messages." : ""}
+            
+            <p aria-live="polite" className="text-sm">
+              {status === "success" && (
+                <span className="text-terminal-success">
+                  Message sent successfully! I will get back to you soon.
+                </span>
+              )}
+              {status === "error" && (
+                <span className="text-destructive">
+                  Something went wrong. Please try again later.
+                </span>
+              )}
             </p>
           </form>
         </section>
