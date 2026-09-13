@@ -977,24 +977,6 @@ export const hobbies: Hobby[] = [
   },
 
   {
-    id: "content-creation",
-    title: "Content Creation",
-    tagline: "Documenting the ride and the build.",
-    description:
-      "Capturing rides, trips and technology projects and shaping them into watchable content.",
-    story: PLACEHOLDER,
-    status: "Active",
-    since: PLACEHOLDER,
-    milestones: [{ date: PLACEHOLDER, text: PLACEHOLDER }],
-    images: [
-      {
-        src: "/images/hobbies/content-1.jpg",
-        alt: "Content creation photo placeholder",
-      },
-    ],
-  },
-
-  {
     id: "building",
     title: "Technology / Building Projects",
     tagline: "Utilising new technologies to build side projects and experiments.",
@@ -1004,6 +986,42 @@ export const hobbies: Hobby[] = [
     status: "Currently building",
     since: "2018",
     milestones: [{ date: "2026", text: "personal curated portfolio" }],
+    images: [
+      {
+        src: "/images/hobbies/building-1.jpg",
+        alt: "Technology project build photo placeholder",
+      },
+    ],
+  },
+
+  {
+    id: "Sports",
+    title: "Playing Sports",
+    tagline: "Staying active and competitive.",
+    description:
+      "Playing various sports to stay fit and competitive.",
+    story: PLACEHOLDER,
+    status: "Currently playing",
+    since: "2000",
+    milestones: [{ date: "2012", text: "won bronze medal in high jump" }],
+    images: [
+      {
+        src: "/images/hobbies/building-1.jpg",
+        alt: "Technology project build photo placeholder",
+      },
+    ],
+  },
+
+  {
+    id: "RRiddles",
+    title: "Solving Riddles and mathematical sums",
+    tagline: "Sharpening my mind with logic puzzles.",
+    description:
+      "Solving riddles and mathematical sums to keep my mind sharp.",
+    story: PLACEHOLDER,
+    status: "Currently solving",
+    since: "2005",
+    milestones: [{ date: "2009-2015", text: "scored 100 marks in mathematics every year" }],
     images: [
       {
         src: "/images/hobbies/building-1.jpg",
@@ -1150,8 +1168,8 @@ export const now: { updated: string; sections: NowSection[] } = {
 
 export const navItems = [
   { label: "Home", to: "/" },
-  { label: "Terminal", to: "/terminal" },
   { label: "Profile", to: "/profile" },
+  { label: "Terminal", to: "/terminal" },
   { label: "Projects", to: "/projects" },
   { label: "Skills", to: "/skills" },
   { label: "Hobbies", to: "/hobbies" },
