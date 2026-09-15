@@ -242,6 +242,7 @@ const buildIndex = (): Doc[] => {
     { title: "Now", route: "/now", snippet: "What I am doing at the moment." },
     { title: "Contact", route: "/contact", snippet: "Get in touch." },
     { title: "Help", route: "/help", snippet: "Manual page for this site." },
+    { title: "Get This Portfolio", route: "/payments", snippet: "Get a portfolio like this one." },
   ];
 
   for (const page of pages) {

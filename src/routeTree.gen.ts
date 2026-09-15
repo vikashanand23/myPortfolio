@@ -14,6 +14,7 @@ import { Route as ContactRouteImport } from './routes/contact'
 import { Route as HelpRouteImport } from './routes/help'
 import { Route as HobbiesRouteImport } from './routes/hobbies'
 import { Route as NowRouteImport } from './routes/now'
+import { Route as PaymentsRouteImport } from './routes/payments'
 import { Route as ProfileRouteImport } from './routes/profile'
 import { Route as SkillsRouteImport } from './routes/skills'
 import { Route as TerminalRouteImport } from './routes/terminal'
@@ -44,6 +45,11 @@ const HobbiesRoute = HobbiesRouteImport.update({
 const NowRoute = NowRouteImport.update({
   id: '/now',
   path: '/now',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PaymentsRoute = PaymentsRouteImport.update({
+  id: '/payments',
+  path: '/payments',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ProfileRoute = ProfileRouteImport.update({
@@ -83,6 +89,7 @@ export interface FileRoutesByFullPath {
   '/help': typeof HelpRoute
   '/hobbies': typeof HobbiesRoute
   '/now': typeof NowRoute
+  '/payments': typeof PaymentsRoute
   '/profile': typeof ProfileRoute
   '/skills': typeof SkillsRoute
   '/terminal': typeof TerminalRoute
@@ -96,6 +103,7 @@ export interface FileRoutesByTo {
   '/help': typeof HelpRoute
   '/hobbies': typeof HobbiesRoute
   '/now': typeof NowRoute
+  '/payments': typeof PaymentsRoute
   '/profile': typeof ProfileRoute
   '/skills': typeof SkillsRoute
   '/terminal': typeof TerminalRoute
@@ -110,6 +118,7 @@ export interface FileRoutesById {
   '/help': typeof HelpRoute
   '/hobbies': typeof HobbiesRoute
   '/now': typeof NowRoute
+  '/payments': typeof PaymentsRoute
   '/profile': typeof ProfileRoute
   '/skills': typeof SkillsRoute
   '/terminal': typeof TerminalRoute
@@ -125,6 +134,7 @@ export interface FileRouteTypes {
     | '/help'
     | '/hobbies'
     | '/now'
+    | '/payments'
     | '/profile'
     | '/skills'
     | '/terminal'
@@ -138,6 +148,7 @@ export interface FileRouteTypes {
     | '/help'
     | '/hobbies'
     | '/now'
+    | '/payments'
     | '/profile'
     | '/skills'
     | '/terminal'
@@ -151,6 +162,7 @@ export interface FileRouteTypes {
     | '/help'
     | '/hobbies'
     | '/now'
+    | '/payments'
     | '/profile'
     | '/skills'
     | '/terminal'
@@ -165,6 +177,7 @@ export interface RootRouteChildren {
   HelpRoute: typeof HelpRoute
   HobbiesRoute: typeof HobbiesRoute
   NowRoute: typeof NowRoute
+  PaymentsRoute: typeof PaymentsRoute
   ProfileRoute: typeof ProfileRoute
   SkillsRoute: typeof SkillsRoute
   TerminalRoute: typeof TerminalRoute
@@ -208,6 +221,13 @@ declare module '@tanstack/react-router' {
       path: '/now'
       fullPath: '/now'
       preLoaderRoute: typeof NowRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/payments': {
+      id: '/payments'
+      path: '/payments'
+      fullPath: '/payments'
+      preLoaderRoute: typeof PaymentsRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/profile': {
@@ -261,6 +281,7 @@ const rootRouteChildren: RootRouteChildren = {
   HelpRoute: HelpRoute,
   HobbiesRoute: HobbiesRoute,
   NowRoute: NowRoute,
+  PaymentsRoute: PaymentsRoute,
   ProfileRoute: ProfileRoute,
   SkillsRoute: SkillsRoute,
   TerminalRoute: TerminalRoute,
