@@ -129,35 +129,50 @@ function profileOutput(): TerminalLine[] {
 
 function experienceOutput(): TerminalLine[] {
   const lines: TerminalLine[] = [heading("EXPERIENCE")];
+
   for (const exp of experience) {
     lines.push(spacer());
     lines.push(text(`${exp.role} — ${exp.company}`));
     lines.push(text(`${exp.start} – ${exp.end}${exp.type ? ` · ${exp.type}` : ""}`, true));
     lines.push(text(exp.summary));
-    for (const item of exp.responsibilities) lines.push(bullet(value(item)));
+
+    for (const item of exp.responsibilities) {
+      lines.push(bullet(value(item)));
+    }
+
     lines.push(text(`tech: ${exp.technologies.join(", ")}`, true));
   }
+
   lines.push(spacer());
   lines.push({ kind: "link", text: "Open profile →", route: "/profile" });
+
   return lines;
 }
 
 function projectsOutput(): TerminalLine[] {
   const lines: TerminalLine[] = [heading("PROJECTS")];
+
   for (const project of projects) {
     lines.push(spacer());
     lines.push(text(`${project.name} — ${project.tagline}`));
     lines.push(text(project.description, true));
     lines.push(text(`tech: ${project.technologies.join(", ")}`, true));
-    lines.push({ kind: "link", text: `open ${project.id} →`, route: `/projects/${project.id}` });
+    lines.push({
+      kind: "link",
+      text: `open ${project.id} →`,
+      route: `/projects/${project.id}`,
+    });
   }
+
   lines.push(spacer());
   lines.push(text("Tip: project <name> for full details.", true));
+
   return lines;
 }
 
 function projectDetail(name: string): TerminalLine[] {
   const query = name.toLowerCase().trim();
+
   const project =
     projects.find((p) => p.id.toLowerCase() === query) ??
     projects.find((p) => p.name.toLowerCase() === query) ??
@@ -188,39 +203,63 @@ function projectDetail(name: string): TerminalLine[] {
     spacer(),
     text(`tech: ${project.technologies.join(", ")}`, true),
     spacer(),
-    { kind: "link", text: "Open project page →", route: `/projects/${project.id}` },
+    {
+      kind: "link",
+      text: "Open project page →",
+      route: `/projects/${project.id}`,
+    },
   ];
+
   return lines;
 }
 
 function skillsOutput(): TerminalLine[] {
   const lines: TerminalLine[] = [heading("SKILLS")];
+
   for (const category of skillCategories) {
     lines.push(spacer());
     lines.push(text(category.name));
     lines.push(text(category.skills.map((s) => s.name).join("  ·  "), true));
   }
+
   lines.push(spacer());
   lines.push({ kind: "link", text: "Open skills →", route: "/skills" });
+
   return lines;
 }
 
 function listOutput(items: string[], title: string, route: string): TerminalLine[] {
   const lines: TerminalLine[] = [heading(title)];
-  for (const item of items) lines.push(bullet(value(item)));
+
+  for (const item of items) {
+    lines.push(bullet(value(item)));
+  }
+
   lines.push(spacer());
-  lines.push({ kind: "link", text: `Open ${title.toLowerCase()} →`, route });
+  lines.push({
+    kind: "link",
+    text: `Open ${title.toLowerCase()} →`,
+    route,
+  });
+
   return lines;
 }
 
 function contactOutput(): TerminalLine[] {
   const lines: TerminalLine[] = [heading("CONTACT")];
+
   for (const social of socials) {
     lines.push(kv(social.label, value(social.url)));
   }
+
   lines.push(kv("Location", value(personal.location)));
   lines.push(spacer());
-  lines.push({ kind: "link", text: "Open contact page →", route: "/contact" });
+  lines.push({
+    kind: "link",
+    text: "Open contact page →",
+    route: "/contact",
+  });
+
   return lines;
 }
 
@@ -228,7 +267,9 @@ function findOutput(term: string): TerminalLine[] {
   if (!term.trim()) {
     return [{ kind: "error", text: "usage: find <term>" }];
   }
+
   const results = searchPortfolio(term);
+
   if (!results.length) {
     return [
       text(`No matches for "${term}".`),
@@ -240,16 +281,25 @@ function findOutput(term: string): TerminalLine[] {
     text(`Found ${results.length} match${results.length === 1 ? "" : "es"}`),
     spacer(),
   ];
+
   let currentCategory = "";
+
   for (const result of results) {
     if (result.category !== currentCategory) {
       currentCategory = result.category;
       lines.push(heading(`[${result.category.toUpperCase()}]`));
     }
-    lines.push({ kind: "link", text: `${result.title} — ${result.snippet}`, route: result.route });
+
+    lines.push({
+      kind: "link",
+      text: `${result.title} — ${result.snippet}`,
+      route: result.route,
+    });
   }
+
   lines.push(spacer());
   lines.push(text(`Type "open ${term.trim().split(/\s+/)[0] ?? term}" or click a result.`, true));
+
   return lines;
 }
 
@@ -270,6 +320,7 @@ function neofetchOutput(): TerminalLine[] {
 
 function sudoOutput(rest: string): TerminalLine[] {
   const arg = rest.toLowerCase().trim();
+
   if (arg.startsWith("hire")) {
     return [
       text("Checking permissions..."),
@@ -282,12 +333,98 @@ function sudoOutput(rest: string): TerminalLine[] {
       { kind: "link", text: "Get in touch →", route: "/contact" },
     ];
   }
+
   if (arg.startsWith("rm")) {
     return [{ kind: "error", text: "sudo: nice try. This filesystem is read-only." }];
   }
+
   return [
     text(`${personal.terminalUser} is not in the sudoers file. This incident has been logged.`),
   ];
+}
+
+/**
+ * Playful terminal Easter egg.
+ *
+ * Detects a small set of common joking insults and responds with
+ * harmless DevOps/terminal-themed replies.
+ *
+ * Word boundaries are used so words that merely contain an insult
+ * don't accidentally trigger the Easter egg.
+ */
+const playfulInsults: Record<string, string[]> = {
+  idiot: [
+    "Nice try. You're the idiot here. 😎",
+    "ERROR: Insult redirected back to sender. 😂",
+    "Mirror.exe has entered the chat.",
+  ],
+  bc: [
+    "Nice try. You're bc . 😎",
+    "ERROR: Insult redirected back to sender. 😂",
+    "Mirror.exe has entered the chat.",
+  ],
+  bsdk: [
+    "Nice try. You're bsdk . 😎",
+    "ERROR: Insult redirected back to sender. 😂",
+    "Mirror.exe has entered the chat.",
+  ],
+  mc: [
+    "Nice try. You're mc . 😎",
+    "ERROR: Insult redirected back to sender. 😂",
+    "Mirror.exe has entered the chat.",
+  ],
+  behnchod: [
+    "Nice try. You're behnchod . 😎",
+    "ERROR: Insult redirected back to sender. 😂",
+    "Mirror.exe has entered the chat.",
+  ],
+  loru: [
+    "Nice try. You're loru . 😎",
+    "ERROR: Insult redirected back to sender. 😂",
+    "Mirror.exe has entered the chat.",
+  ],
+  stupid: [
+    "That's rich coming from you. 😂",
+    "ERROR: Wrong target. Try looking in the mirror.",
+    "The terminal respectfully disagrees. 😌",
+  ],
+  dumb: [
+    "Bold words from someone talking to a terminal. 😂",
+    "Dumb? That's not what my logs say.",
+    "404: Dumbness not found. Try again.",
+  ],
+  moron: [
+    "Request denied. Moron detected — and it isn't me. 😎",
+    "Interesting diagnosis. Unfortunately, it points back to you.",
+    "Nice attempt. The terminal remains undefeated.",
+  ],
+  fool: [
+    "A fool? Please check your current shell session. 😂",
+    "That command has been redirected to /dev/mirror.",
+    "Permission denied: fool privileges belong to you.",
+  ],
+  loser: [
+    "Loser detected. Process terminated. 😂",
+    "That's one way to describe your current command session.",
+    "ERROR 418: I'm a teapot, you're the loser. ☕",
+  ],
+};
+
+function playfulInsultOutput(input: string): TerminalLine[] | null {
+  const normalized = input.toLowerCase();
+
+  for (const [word, responses] of Object.entries(playfulInsults)) {
+    const pattern = new RegExp(`\\b${word}\\b`, "i");
+
+    if (pattern.test(normalized)) {
+      const response =
+        responses[Math.floor(Math.random() * responses.length)] ?? "Insult response unavailable.";
+
+      return [text("⚠ Insult detected.", true), text(response)];
+    }
+  }
+
+  return null;
 }
 
 const naturalLanguage = (input: string) =>
@@ -295,7 +432,17 @@ const naturalLanguage = (input: string) =>
 
 export function runCommand(rawInput: string): CommandResult {
   const input = rawInput.trim();
-  if (!input) return { lines: [] };
+
+  if (!input) {
+    return { lines: [] };
+  }
+
+  // Check playful Easter eggs before normal command parsing.
+  const playfulResponse = playfulInsultOutput(input);
+
+  if (playfulResponse) {
+    return { lines: playfulResponse };
+  }
 
   const parts = input.split(/\s+/);
   const command = parts[0] ?? "";
@@ -305,8 +452,10 @@ export function runCommand(rawInput: string): CommandResult {
   switch (cmd) {
     case "help":
       return { lines: helpOutput() };
+
     case "clear":
       return { lines: [], action: { type: "clear" } };
+
     case "whoami":
       return {
         lines: [
@@ -315,14 +464,21 @@ export function runCommand(rawInput: string): CommandResult {
           text(personal.shortIntro),
         ],
       };
+
     case "about":
-      return { lines: [heading("ABOUT"), text(personal.about)] };
+      return {
+        lines: [heading("ABOUT"), text(personal.about)],
+      };
+
     case "profile":
       return { lines: profileOutput() };
+
     case "experience":
       return { lines: experienceOutput() };
+
     case "projects":
       return { lines: projectsOutput() };
+
     case "project":
       return args
         ? { lines: projectDetail(args) }
@@ -332,8 +488,10 @@ export function runCommand(rawInput: string): CommandResult {
               text(`e.g. project ${projects[0]?.id ?? "grimmspot"}`, true),
             ],
           };
+
     case "skills":
       return { lines: skillsOutput() };
+
     case "education":
       return {
         lines: listOutput(
@@ -346,6 +504,7 @@ export function runCommand(rawInput: string): CommandResult {
           "/profile",
         ),
       };
+
     case "certifications":
       return {
         lines: listOutput(
@@ -356,6 +515,7 @@ export function runCommand(rawInput: string): CommandResult {
           "/profile",
         ),
       };
+
     case "achievements":
       return {
         lines: listOutput(
@@ -366,6 +526,7 @@ export function runCommand(rawInput: string): CommandResult {
           "/profile",
         ),
       };
+
     case "hobbies":
       return {
         lines: listOutput(
@@ -374,6 +535,7 @@ export function runCommand(rawInput: string): CommandResult {
           "/hobbies",
         ),
       };
+
     case "timeline":
       return {
         lines: listOutput(
@@ -382,19 +544,32 @@ export function runCommand(rawInput: string): CommandResult {
           "/timeline",
         ),
       };
+
     case "now": {
       const lines: TerminalLine[] = [heading("NOW"), text(`updated: ${value(now.updated)}`, true)];
+
       for (const section of now.sections) {
         lines.push(spacer());
         lines.push(text(section.title));
-        for (const item of section.items) lines.push(bullet(value(item)));
+
+        for (const item of section.items) {
+          lines.push(bullet(value(item)));
+        }
       }
+
       lines.push(spacer());
-      lines.push({ kind: "link", text: "Open now page →", route: "/now" });
+      lines.push({
+        kind: "link",
+        text: "Open now page →",
+        route: "/now",
+      });
+
       return { lines };
     }
+
     case "contact":
       return { lines: contactOutput() };
+
     case "resume": {
       if (isPlaceholder(personal.resumePath)) {
         return {
@@ -405,6 +580,7 @@ export function runCommand(rawInput: string): CommandResult {
           ],
         };
       }
+
       return {
         lines: [
           text("Fetching resume..."),
@@ -416,13 +592,16 @@ export function runCommand(rawInput: string): CommandResult {
         ],
       };
     }
+
     case "location":
       return {
         lines: [kv("Location", value(personal.location)), kv("Hometown", value(personal.hometown))],
       };
+
     case "github":
     case "linkedin": {
       const social = socials.find((s) => s.id === cmd);
+
       if (!social || isPlaceholder(social.url)) {
         return {
           lines: [
@@ -431,37 +610,66 @@ export function runCommand(rawInput: string): CommandResult {
           ],
         };
       }
-      return { lines: [{ kind: "external", text: social.url, url: social.url }] };
+
+      return {
+        lines: [{ kind: "external", text: social.url, url: social.url }],
+      };
     }
+
     case "ls":
       return { lines: [text(sections.join("   "))] };
+
     case "pwd":
-      return { lines: [text(`/home/${personal.terminalUser}/portfolio`)] };
+      return {
+        lines: [text(`/home/${personal.terminalUser}/portfolio`)],
+      };
+
     case "date":
-      return { lines: [text(new Date().toString())] };
+      return {
+        lines: [text(new Date().toString())],
+      };
+
     case "find":
     case "search":
       return { lines: findOutput(args) };
+
     case "open": {
       const [first] = searchPortfolio(args || "home", 1);
-      if (!first) return { lines: [{ kind: "error", text: `Nothing to open for "${args}".` }] };
+
+      if (!first) {
+        return {
+          lines: [{ kind: "error", text: `Nothing to open for "${args}".` }],
+        };
+      }
+
       return {
         lines: [text(`Opening ${first.title}...`)],
-        action: { type: "navigate", route: first.route },
+        action: {
+          type: "navigate",
+          route: first.route,
+        },
       };
     }
+
     case "neofetch":
       return { lines: neofetchOutput() };
+
     case "sudo":
       return { lines: sudoOutput(args) };
+
     case "exit":
     case "quit":
-      return { lines: [text("There is no exit. Only more infrastructure.")] };
+      return {
+        lines: [text("There is no exit. Only more infrastructure.")],
+      };
+
     case "echo":
       return { lines: [text(args)] };
+
     default: {
       if (naturalLanguage(input)) {
         const results = searchPortfolio(input);
+
         if (results.length) {
           return {
             lines: [
@@ -472,6 +680,7 @@ export function runCommand(rawInput: string): CommandResult {
           };
         }
       }
+
       return {
         lines: [
           { kind: "error", text: `Command not found: ${command}` },
@@ -485,7 +694,11 @@ export function runCommand(rawInput: string): CommandResult {
 /** Autocomplete suggestions for the current input. */
 export function suggest(input: string): string[] {
   const value = input.trimStart().toLowerCase();
-  if (!value || value.includes(" ")) return [];
+
+  if (!value || value.includes(" ")) {
+    return [];
+  }
+
   return commandNames.filter((name) => name.startsWith(value) && name !== value).slice(0, 6);
 }
 
