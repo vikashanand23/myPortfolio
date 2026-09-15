@@ -1113,6 +1113,7 @@ export const navItems = [
   { label: "Now", to: "/now" },
   { label: "Contact", to: "/contact" },
   { label: "Help", to: "/help" },
+  { label: "Get This Portfolio", to: "/payments" },
 ] as const;
 
 export const isPlaceholder = (value: string | undefined | null) =>
