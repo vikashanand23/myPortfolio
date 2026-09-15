@@ -949,8 +949,8 @@ export const hobbies: Hobby[] = [
     milestones: [{ date: "2012", text: "won bronze medal in high jump" }],
     images: [
       {
-        src: "/images/hobbies/building-1.jpg",
-        alt: "Technology project build photo placeholder",
+        src: "/images/hobbies/sports-1.jpg",
+        alt: "Sports photo placeholder",
       },
     ],
   },
@@ -966,8 +966,8 @@ export const hobbies: Hobby[] = [
     milestones: [{ date: "2009-2015", text: "scored 100 marks in mathematics every year" }],
     images: [
       {
-        src: "/images/hobbies/building-1.jpg",
-        alt: "Technology project build photo placeholder",
+        src: "/images/hobbies/riddles-1.png",
+        alt: "Riddle solving photo placeholder",
       },
     ],
   },
@@ -1041,7 +1041,7 @@ export const timeline: TimelineEntry[] = [
     id: "t-education-Higher-Secondary-School",
     date: "Jul 2015",
     sortKey: "2015-07",
-    title: "class10th - Keshave Saraswati Vidya Mandir, Patna",
+    title: "class10th - Keshav Saraswati Vidya Mandir, Patna",
     category: "Education",
     description: "Completed primary education with 98 % marks.",
     route: "/profile",
