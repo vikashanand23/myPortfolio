@@ -383,6 +383,21 @@ const playfulInsults: Record<string, string[]> = {
     "ERROR: Insult redirected back to sender. 😂",
     "Mirror.exe has entered the chat.",
   ],
+  chutiya: [
+    "Nice try. You're chutiya . 😎",
+    "ERROR: Insult redirected back to sender. 😂",
+    "Mirror.exe has entered the chat.",
+  ],
+  BBBB: [
+    "Nice try. You're BBBB . 😎",
+    "ERROR: Insult redirected back to sender. 😂",
+    "Mirror.exe has entered the chat.",
+  ],
+  lodu: [
+    "Nice try. You're lodu . 😎",
+    "ERROR: Insult redirected back to sender. 😂",
+    "Mirror.exe has entered the chat.",
+  ],
   stupid: [
     "That's rich coming from you. 😂",
     "ERROR: Wrong target. Try looking in the mirror.",
