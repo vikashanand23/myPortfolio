@@ -887,10 +887,10 @@ export const hobbies: Hobby[] = [
         src: "/images/hobbies/motorcycling-1.jpg",
         alt: "Motorcycling photo placeholder",
       },
-      {
-        src: "/images/hobbies/motorcycling-2.jpg",
-        alt: "Motorcycling photo placeholder",
-      },
+      // {
+      //   src: "/images/hobbies/motorcycling-2.jpg",
+      //   alt: "Motorcycling photo placeholder",
+      // },
     ],
   },
 
