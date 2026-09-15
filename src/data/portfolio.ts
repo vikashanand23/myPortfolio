@@ -932,7 +932,7 @@ export const hobbies: Hobby[] = [
     milestones: [{ date: "2026", text: "personal curated portfolio" }],
     images: [
       {
-        src: "/images/hobbies/building-1.jpg",
+        src: "/images/hobbies/building-1.png",
         alt: "Technology project build photo placeholder",
       },
     ],
