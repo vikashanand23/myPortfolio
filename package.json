@@ -12,7 +12,6 @@
     "test": "vitest run",
     "format": "prettier --write ."
   },
-  
   "overrides": {
     "rolldown": "1.2.1"
   },
