@@ -17,13 +17,13 @@ It is a hands-on demonstration of how I approach software delivery as a **DevOps
 
 The portfolio combines a terminal-inspired UI with information about my:
 
-* DevOps experience
-* AWS infrastructure
-* Kubernetes and service mesh work
-* CI/CD implementations
-* Infrastructure as Code
-* Automation and scripting
-* Projects and technical experiments
+- DevOps experience
+- AWS infrastructure
+- Kubernetes and service mesh work
+- CI/CD implementations
+- Infrastructure as Code
+- Automation and scripting
+- Projects and technical experiments
 
 ---
 
@@ -97,29 +97,29 @@ There is currently no dedicated database or traditional application server.
 
 ### Frontend
 
-* React
-* TypeScript
-* TanStack Start
-* TanStack Router
-* Vite
-* Tailwind CSS
-* shadcn/ui
+- React
+- TypeScript
+- TanStack Start
+- TanStack Router
+- Vite
+- Tailwind CSS
+- shadcn/ui
 
 ### DevOps / Cloud
 
-* Git
-* GitHub
-* GitHub Actions
-* Cloudflare Workers
-* Nitro
-* Node.js
+- Git
+- GitHub
+- GitHub Actions
+- Cloudflare Workers
+- Nitro
+- Node.js
 
 ### Quality & Testing
 
-* ESLint
-* Prettier
-* Vitest
-* Automated production builds
+- ESLint
+- Prettier
+- Vitest
+- Automated production builds
 
 ---
 
@@ -223,13 +223,13 @@ The portfolio includes automated tests for its search functionality.
 
 Current test coverage includes:
 
-* Empty search queries
-* Whitespace-only queries
-* Project searches
-* AWS-related searches
-* Result limits
-* Search relevance scores
-* Result grouping
+- Empty search queries
+- Whitespace-only queries
+- Project searches
+- AWS-related searches
+- Result limits
+- Search relevance scores
+- Result grouping
 
 Run tests locally:
 
@@ -252,9 +252,9 @@ Tests       6 passed
 
 Install:
 
-* Node.js 24+
-* npm
-* Git
+- Node.js 24+
+- npm
+- Git
 
 ### Clone
 
@@ -351,29 +351,29 @@ The project is intentionally evolving as a real DevOps project.
 
 ### Completed
 
-* [x] Remove unused Worker configuration
-* [x] Review deployment secrets
-* [x] Add automated linting
-* [x] Add automated unit tests
-* [x] Add production build validation
-* [x] Separate CI and CD workflows
-* [x] Protect `main`
-* [x] Require CI before merging
-* [x] Deploy automatically to Cloudflare after merge
+- [x] Remove unused Worker configuration
+- [x] Review deployment secrets
+- [x] Add automated linting
+- [x] Add automated unit tests
+- [x] Add production build validation
+- [x] Separate CI and CD workflows
+- [x] Protect `main`
+- [x] Require CI before merging
+- [x] Deploy automatically to Cloudflare after merge
 
 ### Planned
 
-* [ ] Deployment rollback strategy
-* [ ] Custom domain
-* [ ] CI/CD status dashboard
-* [ ] Deployment notifications
-* [ ] Staging environment
-* [ ] Production environment
-* [ ] Environment-specific secrets
-* [ ] Deployment health checks
-* [ ] Automated smoke tests
-* [ ] Infrastructure as Code for Cloudflare resources
-* [ ] Observability and monitoring
+- [ ] Deployment rollback strategy
+- [ ] Custom domain
+- [ ] CI/CD status dashboard
+- [ ] Deployment notifications
+- [ ] Staging environment
+- [ ] Production environment
+- [ ] Environment-specific secrets
+- [ ] Deployment health checks
+- [ ] Automated smoke tests
+- [ ] Infrastructure as Code for Cloudflare resources
+- [ ] Observability and monitoring
 
 ---
 
@@ -411,4 +411,3 @@ vikashanand04@gmail.com
 ## License
 
 This project is primarily a personal portfolio and demonstration project.
-
