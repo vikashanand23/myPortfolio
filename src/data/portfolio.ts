@@ -878,7 +878,7 @@ export const hobbies: Hobby[] = [
     tagline: "Outrunning daylight and regrets.",
     description:
       "Riding is how I clear my head. You inspect every bolt, check every line, and respect the machine—mostly because you know it won't hesitate to turn you into a statistical anomaly",
-    story: PLACEHOLDER,
+    story: "I’ve always had a passion for speed—whatever I do, it has to be fast. So why should traveling be any slower?",
     status: "Active",
     since: "2023",
     milestones: [{ date: "05-2025", text: "bought guirrella 450" }],
