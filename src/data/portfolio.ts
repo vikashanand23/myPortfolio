@@ -910,7 +910,7 @@ export const hobbies: Hobby[] = [
     description:
       "Off the map, off-beat, and driving straight into the punchline no one saw coming.",
     story:
-      "i don't travel, so i can click pictures, I travel so i can challenge my beliefs, so i don't become someone who hates everyone who disagrees with me(like leftists, liberals), i want to earn multiple perspectives, and i believe i have the understand multiple perspectives and still live with mine.",
+      "i don't travel, so i can click pictures, I travel so i can challenge my beliefs, so i don't become someone who hates everyone who disagrees with me(like leftists, liberals), i want to earn multiple perspectives, and i believe i have the ability to understand multiple perspectives and still live with mine.",
     status: "Active",
     since: "2018",
     milestones: [{ date: "present", text: "earth is too big to have a milestone for travelling" }],
