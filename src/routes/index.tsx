@@ -80,6 +80,24 @@ function Home() {
                 <dt className="prompt-label">Outage Prevented</dt>
                 <dd className="mt-0.5">{personal.OutageCount}</dd>
               </div>
+              {/* <div>
+                <dt className="prompt-label">location</dt>
+                <dd className="mt-0.5">
+                  <Value value={String(personal.location)} />
+                </dd>
+              </div>
+              <div>
+                <dt className="prompt-label">Hometown</dt>
+                <dd className="mt-0.5">
+                  <Value value={String(personal.hometown)} />
+                </dd>
+              </div>
+              <div>
+                <dt className="prompt-label">Experience</dt>
+                <dd className="mt-0.5">
+                  <Value value={String(personal.yearsOfExperience)} />
+                </dd>
+              </div> */}
             </dl>
 
             <div className="mt-8 flex flex-wrap gap-3">

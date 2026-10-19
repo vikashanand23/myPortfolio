@@ -138,6 +138,12 @@ export const personal = {
 
   OutageCount: "6",
 
+  location: "Pune, Maharashtra, India",
+
+  hometown: "Bihar, Patna, India",
+
+  yearsOfExperience: "4+ years",
+
   focus: "AWS • Kubernetes • Terraform • DevOps",
 
   availability: "Open to conversations",
