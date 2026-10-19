@@ -132,11 +132,11 @@ export const personal = {
   professionalSummary:
     "Cloud DevOps Engineer with 4+ years of experience designing, deploying and supporting scalable cloud infrastructure on AWS. Experienced in Kubernetes container orchestration, CI/CD automation using Jenkins, Infrastructure as Code with Terraform, and service mesh technologies such as Istio and Gloo Mesh. Strong background in Linux-based environments, multi-region deployments, cloud monitoring, production support and operational automation.",
 
-  location: "Pune, Maharashtra, India",
+  hotfixCount: 16,
 
-  hometown: "Patna, Bihar, India",
+  productionDeployments: "50+ customers",
 
-  yearsOfExperience: "4+ Years",
+  OutageCount: "6",
 
   focus: "AWS • Kubernetes • Terraform • DevOps",
 
@@ -1016,7 +1016,7 @@ export const hobbies: Hobby[] = [
     description:
       "Experimenting with new recipes and techniques to create nutritious and delicious meals.",
     story:
-      "I prepare some ot of the world dishes that tastes the best, but i cook less else i would start hating on every othe food which is not cooked by me🤣",
+      "I prepare some ot of the world dishes that tastes the best, but i cook less else i would start hating on every other food which is not cooked by me🤣",
     status: "Currently cooking",
     since: "2019",
     milestones: [{ date: "2022", text: "became self dependent and cut down on external dining" }],
