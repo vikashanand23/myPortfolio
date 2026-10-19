@@ -888,10 +888,18 @@ export const hobbies: Hobby[] = [
         src: "/images/hobbies/motorcycling-1.jpg",
         alt: "Motorcycling photo placeholder",
       },
-      // {
-      //   src: "/images/hobbies/motorcycling-2.jpg",
-      //   alt: "Motorcycling photo placeholder",
-      // },
+      {
+        src: "/images/hobbies/motorcycling-2.jpg",
+        alt: "Motorcycling photo placeholder",
+      },
+      {
+        src: "/images/hobbies/motorcycling-3.jpg",
+        alt: "Motorcycling photo placeholder",
+      },
+      {
+        src: "/images/hobbies/motorcycling-4.jpg",
+        alt: "Motorcycling photo placeholder",
+      },
     ],
   },
 
@@ -916,6 +924,30 @@ export const hobbies: Hobby[] = [
       },
       {
         src: "/images/hobbies/travel-3.jpg",
+        alt: "Travel photo placeholder",
+      },
+      {
+        src: "/images/hobbies/travel-4.jpg",
+        alt: "Travel photo placeholder",
+      },
+      {
+        src: "/images/hobbies/travel-5.jpg",
+        alt: "Travel photo placeholder",
+      },
+      {
+        src: "/images/hobbies/travel-6.jpg",
+        alt: "Travel photo placeholder",
+      },
+      {
+        src: "/images/hobbies/travel-7.jpg",
+        alt: "Travel photo placeholder",
+      },
+      {
+        src: "/images/hobbies/travel-8.jpg",
+        alt: "Travel photo placeholder",
+      },
+      {
+        src: "/images/hobbies/travel-9.jpg",
         alt: "Travel photo placeholder",
       },
     ],
