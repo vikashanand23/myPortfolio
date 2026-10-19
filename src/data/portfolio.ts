@@ -956,7 +956,7 @@ export const hobbies: Hobby[] = [
   },
 
   {
-    id: "RRiddles",
+    id: "Riddles",
     title: "Solving Riddles and mathematical sums",
     tagline: "Sharpening my mind with logic puzzles.",
     description: "Solving riddles and mathematical sums to keep my mind sharp.",
@@ -968,6 +968,24 @@ export const hobbies: Hobby[] = [
       {
         src: "/images/hobbies/riddles-1.png",
         alt: "Riddle solving photo placeholder",
+      },
+    ],
+  },
+
+  {
+    id: "Cooking for self",
+    title: "Cooking for Self or atmost two people",
+    tagline: "Exploring culinary creativity in the kitchen.",
+    description:
+      "Experimenting with new recipes and techniques to create nutritious and delicious meals.",
+    story: PLACEHOLDER,
+    status: "Currently cooking",
+    since: "2019",
+    milestones: [{ date: "2022", text: "became self dependent and cut down on external dining" }],
+    images: [
+      {
+        src: "/images/hobbies/cooking-1.jpg",
+        alt: "cooking photo placeholder",
       },
     ],
   },
