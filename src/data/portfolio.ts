@@ -888,10 +888,18 @@ export const hobbies: Hobby[] = [
         src: "/images/hobbies/motorcycling-1.jpg",
         alt: "Motorcycling photo placeholder",
       },
-      // {
-      //   src: "/images/hobbies/motorcycling-2.jpg",
-      //   alt: "Motorcycling photo placeholder",
-      // },
+      {
+        src: "/images/hobbies/motorcycling-2.jpg",
+        alt: "Motorcycling photo placeholder",
+      },
+      {
+        src: "/images/hobbies/motorcycling-3.jpg",
+        alt: "Motorcycling photo placeholder",
+      },
+      {
+        src: "/images/hobbies/motorcycling-4.jpg",
+        alt: "Motorcycling photo placeholder",
+      },
     ],
   },
 
@@ -901,7 +909,8 @@ export const hobbies: Hobby[] = [
     tagline: "Places, people, detours.",
     description:
       "Off the map, off-beat, and driving straight into the punchline no one saw coming.",
-    story: PLACEHOLDER,
+    story:
+      "i don't travel, so i can click pictures, I travel so i can challenge my beliefs, so i don't become someone who hates everyone who disagrees with me(like leftists, liberals), i want to earn multiple perspectives, and i believe i have the understand multiple perspectives and still live with mine.",
     status: "Active",
     since: "2018",
     milestones: [{ date: "present", text: "earth is too big to have a milestone for travelling" }],
@@ -916,6 +925,30 @@ export const hobbies: Hobby[] = [
       },
       {
         src: "/images/hobbies/travel-3.jpg",
+        alt: "Travel photo placeholder",
+      },
+      {
+        src: "/images/hobbies/travel-4.jpg",
+        alt: "Travel photo placeholder",
+      },
+      {
+        src: "/images/hobbies/travel-5.jpg",
+        alt: "Travel photo placeholder",
+      },
+      {
+        src: "/images/hobbies/travel-6.jpg",
+        alt: "Travel photo placeholder",
+      },
+      {
+        src: "/images/hobbies/travel-7.jpg",
+        alt: "Travel photo placeholder",
+      },
+      {
+        src: "/images/hobbies/travel-8.jpg",
+        alt: "Travel photo placeholder",
+      },
+      {
+        src: "/images/hobbies/travel-9.jpg",
         alt: "Travel photo placeholder",
       },
     ],
