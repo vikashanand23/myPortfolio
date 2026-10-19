@@ -960,7 +960,8 @@ export const hobbies: Hobby[] = [
     tagline: "Utilising new technologies to build side projects and experiments.",
     description:
       "Building technology projects and experiments outside work to learn new tools, architectures and engineering practices.",
-    story: "I love to build things outside of work so i keep myself updated with latest technologies and tools.",
+    story:
+      "I love to build things outside of work so i keep myself updated with latest technologies and tools.",
     status: "Currently building",
     since: "2018",
     milestones: [{ date: "2026", text: "personal curated portfolio" }],
@@ -977,7 +978,8 @@ export const hobbies: Hobby[] = [
     title: "Playing Sports",
     tagline: "Staying active and competitive.",
     description: "Playing various sports to stay fit and competitive.",
-    story: "I have been tired of eating, sleeping, enjoying and many other things but never from playing sports, it recharges me and keeps me active and fit.",
+    story:
+      "I have been tired of eating, sleeping, enjoying and many other things but never from playing sports, it recharges me and keeps me active and fit.",
     status: "Currently playing",
     since: "2000",
     milestones: [{ date: "2012", text: "won bronze medal in high jump" }],
@@ -994,7 +996,8 @@ export const hobbies: Hobby[] = [
     title: "Solving Riddles and mathematical sums",
     tagline: "Sharpening my mind with logic puzzles.",
     description: "Solving riddles and mathematical sums to keep my mind sharp.",
-    story: "I enjoy solving riddles and mathematical problems as it helps me think critically and improves my problem-solving skills.",
+    story:
+      "I enjoy solving riddles and mathematical problems as it helps me think critically and improves my problem-solving skills.",
     status: "Currently solving",
     since: "2005",
     milestones: [{ date: "2009-2015", text: "scored 100 marks in mathematics every year" }],
@@ -1012,7 +1015,8 @@ export const hobbies: Hobby[] = [
     tagline: "Exploring culinary creativity in the kitchen.",
     description:
       "Experimenting with new recipes and techniques to create nutritious and delicious meals.",
-    story: "I prepare some ot of the world dishes that tastes the best, but i cook less else i would start hating on every othe food which is not cooked by me🤣",
+    story:
+      "I prepare some ot of the world dishes that tastes the best, but i cook less else i would start hating on every othe food which is not cooked by me🤣",
     status: "Currently cooking",
     since: "2019",
     milestones: [{ date: "2022", text: "became self dependent and cut down on external dining" }],
