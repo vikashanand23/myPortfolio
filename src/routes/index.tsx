@@ -65,20 +65,20 @@ function Home() {
 
             <dl className="mt-6 flex flex-wrap gap-x-8 gap-y-3 text-sm">
               <div>
-                <dt className="prompt-label">Location</dt>
+                <dt className="prompt-label">Instant Hotfixes</dt>
                 <dd className="mt-0.5">
-                  <Value value={personal.location} />
+                  <Value value={String(personal.hotfixCount)} />
                 </dd>
               </div>
               <div>
-                <dt className="prompt-label">Hometown</dt>
+                <dt className="prompt-label">Production Deployments</dt>
                 <dd className="mt-0.5">
-                  <Value value={personal.hometown} />
+                  <Value value={personal.productionDeployments} />
                 </dd>
               </div>
               <div>
-                <dt className="prompt-label">Experience</dt>
-                <dd className="mt-0.5">{personal.yearsOfExperience}</dd>
+                <dt className="prompt-label">Outage Prevented</dt>
+                <dd className="mt-0.5">{personal.OutageCount}</dd>
               </div>
             </dl>
 
